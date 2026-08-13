@@ -1,6 +1,6 @@
 # Richard Osungu — MEAL, Research & Data Science
 
-Personal portfolio of Richard Osungu, a Monitoring, Evaluation, Accountability and Learning (MEAL) and Research professional based in Nairobi, Kenya, with 7+ years across malaria, mental health, disability inclusion and livelihoods programs.
+Personal portfolio of Richard Osungu, a Monitoring, Evaluation, Accountability and Learning (MEAL) and Research professional based in Kenya, with 7+ years across malaria, mental health, disability inclusion and livelihoods programs.
 
 **Live site:** https://osungu.github.io/my-portfolio/
 
@@ -47,7 +47,7 @@ Each notebook runs top to bottom and renders in full (code, charts and output) d
 
 - Email: richyosu@gmail.com
 - LinkedIn: [osungu-richard](https://linkedin.com/in/osungu-richard)
-- Location: Nairobi, Kenya
+- Location: Kenya
 
 ---
 
