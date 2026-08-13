@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  pre{margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1180px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,5vw,72px) clamp(24px,4vw,44px)">
+    <a href="Work.html" data-reveal style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:#9C4629;margin-bottom:26px" style-hover="color:#B85835">← Selected Work</a>
+    <div data-reveal data-delay="40" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#9A5A38;margin-bottom:20px">Analysis Notebook · Python</div>
+    <h1 data-reveal data-delay="90" style="margin:0;max-width:15em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(34px,5.4vw,66px);line-height:1.05;letter-spacing:-.025em;color:#211D17;text-wrap:balance">Kakamega CCMm: from a monthly export to a supervision shortlist</h1>
+    <p data-reveal data-delay="150" style="margin:26px 0 0;max-width:44em;font-size:clamp(16px,1.5vw,18px);line-height:1.68;color:#4E463C">A single, reproducible notebook that turns the county's community case-management malaria (CCMm) spreadsheet into headline indicators, population-adjusted incidence, age-disaggregated rates, and a ranked list of exactly which community health units to visit next, the analysis behind the charts on the malaria project.</p>
+
+    <div data-reveal data-delay="210" style="margin-top:30px;display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12px">
+      <span style="padding:8px 15px;background:#211D19;color:#E7DDCD;border-radius:100px">Python</span>
+      <span style="padding:8px 15px;background:#EFE6D5;border-radius:100px;color:#4E463C">pandas</span>
+      <span style="padding:8px 15px;background:#EFE6D5;border-radius:100px;color:#4E463C">NumPy</span>
+      <span style="padding:8px 15px;background:#EFE6D5;border-radius:100px;color:#4E463C">matplotlib</span>
+      <span style="padding:8px 15px;background:#EFE6D5;border-radius:100px;color:#4E463C">openpyxl</span>
+    </div>
+
+    <div data-reveal data-delay="270" style="margin-top:30px;display:flex;flex-wrap:wrap;gap:13px">
+      <a href="assets/analyze_kakamega.ipynb" download="analyze_kakamega.ipynb" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:#B85835;color:#F7F1E7;border-radius:100px;font-weight:600;font-size:14.5px;transition:transform .25s,background .25s;box-shadow:0 14px 30px -14px rgba(184,88,53,.7)" style-hover="background:#9C4629;transform:translateY(-2px)">Download notebook (.ipynb) <span style="font-family:'IBM Plex Mono',monospace">↓</span></a>
+      <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/analyze_kakamega.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid #CDBFAC;color:#2A241E;border-radius:100px;font-weight:600;font-size:14.5px;transition:all .25s" style-hover="border-color:#2A241E;background:#EBE1D1">View on GitHub <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
+    </div>
+
+    <div data-reveal data-delay="330" style="margin-top:clamp(34px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:#DDD1BF;border:1px solid #DDD1BF;border-radius:16px;overflow:hidden">
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,40px);line-height:1;color:#B85835">13</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Charts produced</div></div>
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,40px);line-height:1;color:#211D17">528</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Community units</div></div>
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,40px);line-height:1;color:#211D17">12</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Sub-counties</div></div>
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,40px);line-height:1;color:#211D17">14</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Months · Apr '25–May '26</div></div>
+    </div>
+  </header>
+
+  <section style="max-width:1180px;margin:0 auto;padding:clamp(30px,4vw,52px) clamp(20px,5vw,72px)">
+    <div data-reveal style="border-top:1px solid #DDD1BF;padding-top:clamp(26px,3vw,40px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:22px">What the notebook does</div>
+      <p style="margin:0;max-width:46em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(20px,2.4vw,30px);line-height:1.32;letter-spacing:-.01em;color:#2A241E;text-wrap:pretty">Run top-to-bottom, it ingests one Excel export and emits a full evidence pack: a console summary, a <em style="font-style:italic;color:#B85835">summary.json</em>, thirteen charts, and three supervision workbooks, no command line, no manual steps.</p>
+      <div style="margin-top:34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px">
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835;margin-top:2px">01</span><span style="font-size:14.5px;line-height:1.55;color:#463F37">Headline rates: testing rate, positivity (TPR) &amp; treatment coverage</span></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835;margin-top:2px">02</span><span style="font-size:14.5px;line-height:1.55;color:#463F37">Monthly trend and sub-county breakdown</span></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835;margin-top:2px">03</span><span style="font-size:14.5px;line-height:1.55;color:#463F37">Data-quality, discrepancy and zero/missing checks</span></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835;margin-top:2px">04</span><span style="font-size:14.5px;line-height:1.55;color:#463F37">Population-adjusted incidence per 1,000 / year</span></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835;margin-top:2px">05</span><span style="font-size:14.5px;line-height:1.55;color:#463F37">Age-disaggregated testing &amp; positivity (under-5 vs over-5)</span></div>
+        <div style="display:flex;gap:14px;align-items:flex-start"><span style="flex:none;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835;margin-top:2px">06</span><span style="font-size:14.5px;line-height:1.55;color:#463F37">Ward/CHU hotspots, case concentration &amp; supervision shortlist</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <section data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(34px,5vw,60px) 0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">01 · Reproducible by design</div>
+      <h2 style="margin:0;max-width:20em;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.02em;color:#211D17;text-wrap:balance">One file, run top to bottom, nothing to wire up</h2>
+      <p style="margin:18px 0 0;max-width:47em;font-size:15.5px;line-height:1.7;color:#4E463C">There's no <code style="font-family:'IBM Plex Mono',monospace;font-size:.9em;background:#EAE0D0;padding:2px 6px;border-radius:5px">main()</code> and no command line, so nothing clashes with Jupyter. A rendering backend is set for headless machines, so the same notebook runs identically on a laptop or a server. Only one line, the input filename, ever needs changing.</p>
+      <div style="margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid #322C26;background:#1B1815">
+        <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #322C26">
+          <span style="width:11px;height:11px;border-radius:50%;background:#C4573A"></span><span style="width:11px;height:11px;border-radius:50%;background:#C99A3E"></span><span style="width:11px;height:11px;border-radius:50%;background:#5E7C4E"></span>
+          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">1 · Imports</span>
+        </div>
+        <pre data-code="imports" style="padding:18px 20px;overflow-x:auto;font-size:13px;line-height:1.65;color:#CFC5B4"></pre>
+      </div>
+    </section>
+
+    <section data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(34px,5vw,60px) 0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">02 · Trust the data first</div>
+      <h2 style="margin:0;max-width:20em;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.02em;color:#211D17;text-wrap:balance">Fail loudly on bad columns; coerce blanks to zero</h2>
+      <p style="margin:18px 0 0;max-width:47em;font-size:15.5px;line-height:1.7;color:#4E463C">Field exports are messy. The loader validates every expected column up front and raises a clear, human-readable error if the sheet has drifted, rather than silently producing wrong numbers. Count columns are coerced to numeric with blanks treated as zero, while a separate untouched copy is kept so the data-quality checks can see the data exactly as entered.</p>
+      <div style="margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid #322C26;background:#1B1815">
+        <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #322C26">
+          <span style="width:11px;height:11px;border-radius:50%;background:#C4573A"></span><span style="width:11px;height:11px;border-radius:50%;background:#C99A3E"></span><span style="width:11px;height:11px;border-radius:50%;background:#5E7C4E"></span>
+          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">load_and_clean()</span>
+        </div>
+        <pre data-code="load" style="padding:18px 20px;overflow-x:auto;font-size:13px;line-height:1.65;color:#CFC5B4"></pre>
+      </div>
+    </section>
+
+    <section data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(34px,5vw,60px) 0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">03 · Headline indicators</div>
+      <h2 style="margin:0;max-width:20em;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.02em;color:#211D17;text-wrap:balance">Three rates, computed once and reused everywhere</h2>
+      <p style="margin:18px 0 0;max-width:47em;font-size:15.5px;line-height:1.7;color:#4E463C">Testing rate, test positivity (TPR) and treatment coverage are derived through a single safe-division helper, so a month with zero suspected cases yields 0%, never a crash. The same figures feed the console summary, the JSON, and every chart, keeping the whole report internally consistent.</p>
+      <div style="margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid #322C26;background:#1B1815">
+        <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #322C26">
+          <span style="width:11px;height:11px;border-radius:50%;background:#C4573A"></span><span style="width:11px;height:11px;border-radius:50%;background:#C99A3E"></span><span style="width:11px;height:11px;border-radius:50%;background:#5E7C4E"></span>
+          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">build_summary() · rates</span>
+        </div>
+        <pre data-code="rates" style="padding:18px 20px;overflow-x:auto;font-size:13px;line-height:1.65;color:#CFC5B4"></pre>
+      </div>
+      <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid #E0D5C4;background:#FBF7EF">
+        <img src="assets/img/malaria-trend.png" alt="Monthly test positivity vs testing rate" style="display:block;width:100%;height:auto">
+        <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Output chart · monthly test positivity vs testing rate, 14-month trend</figcaption>
+      </figure>
+    </section>
+
+    <section data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(34px,5vw,60px) 0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">04 · Where the burden sits</div>
+      <h2 style="margin:0;max-width:22em;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.02em;color:#211D17;text-wrap:balance">Sub-county ranking against the county average</h2>
+      <p style="margin:18px 0 0;max-width:47em;font-size:15.5px;line-height:1.7;color:#4E463C">Ranking positivity by sub-county turns one aggregate number into a map of where to act. Matungu and Khwisero run well above the 58% county average, while Likuyani sits far below, a difference that changes where commodities and supervision should go.</p>
+      <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid #E0D5C4;background:#FBF7EF">
+        <img src="assets/img/malaria-subcounty.png" alt="Test positivity rate by sub-county" style="display:block;width:100%;height:auto">
+        <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Output chart · test positivity by sub-county, against the county average (58%)</figcaption>
+      </figure>
+    </section>
+
+    <section data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(34px,5vw,60px) 0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">05 · Population-adjusted incidence</div>
+      <h2 style="margin:0;max-width:22em;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.02em;color:#211D17;text-wrap:balance">Rates per 1,000, so places are compared fairly</h2>
+      <p style="margin:18px 0 0;max-width:47em;font-size:15.5px;line-height:1.7;color:#4E463C">Raw case counts favour big populations. Joining the 2019 census population to each sub-county and annualising from however many months are present converts counts into incidence and screening reach per 1,000 per year, the fair basis for comparing a large sub-county with a small one.</p>
+      <div style="margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid #322C26;background:#1B1815">
+        <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #322C26">
+          <span style="width:11px;height:11px;border-radius:50%;background:#C4573A"></span><span style="width:11px;height:11px;border-radius:50%;background:#C99A3E"></span><span style="width:11px;height:11px;border-radius:50%;background:#5E7C4E"></span>
+          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">incidence_rows()</span>
+        </div>
+        <pre data-code="incidence" style="padding:18px 20px;overflow-x:auto;font-size:13px;line-height:1.65;color:#CFC5B4"></pre>
+      </div>
+      <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid #E0D5C4;background:#FBF7EF">
+        <img src="assets/img/malaria-heatmap.png" alt="Test positivity by sub-county and month" style="display:block;width:100%;height:auto">
+        <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Output chart · positivity heatmap, sub-county × month</figcaption>
+      </figure>
+    </section>
+
+    <section data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(34px,5vw,60px) 0">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">06 · From analysis to action</div>
+      <h2 style="margin:0;max-width:22em;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,36px);line-height:1.12;letter-spacing:-.02em;color:#211D17;text-wrap:balance">A named list of where to supervise next</h2>
+      <p style="margin:18px 0 0;max-width:47em;font-size:15.5px;line-height:1.7;color:#4E463C">The payoff isn't a chart. It's a decision. The notebook writes three monthly workbooks: the highest-burden CHUs to support, an operational-gaps shortlist, and the chronically silent units. Those silent CHUs report zero activity every month, so they never trip a threshold, which is exactly why they need a dedicated named list to visit, onboard, or retire from the register.</p>
+      <div style="margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid #322C26;background:#1B1815">
+        <div style="display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid #322C26">
+          <span style="width:11px;height:11px;border-radius:50%;background:#C4573A"></span><span style="width:11px;height:11px;border-radius:50%;background:#C99A3E"></span><span style="width:11px;height:11px;border-radius:50%;background:#5E7C4E"></span>
+          <span style="margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">chronically silent CHUs</span>
+        </div>
+        <pre data-code="silent" style="padding:18px 20px;overflow-x:auto;font-size:13px;line-height:1.65;color:#CFC5B4"></pre>
+      </div>
+      <div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+        <div style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:14px;padding:20px 22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9C4629;margin-bottom:9px">supervision_burden</div><div style="font-size:14px;line-height:1.55;color:#4E463C">Highest-volume CHUs: where to concentrate support</div></div>
+        <div style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:14px;padding:20px 22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9C4629;margin-bottom:9px">data_quality_flags</div><div style="font-size:14px;line-height:1.55;color:#4E463C">Units flagged for operational gaps to visit</div></div>
+        <div style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:14px;padding:20px 22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9C4629;margin-bottom:9px">silent_chus</div><div style="font-size:14px;line-height:1.55;color:#4E463C">Zero-activity units surfaced by name for follow-up</div></div>
+      </div>
+    </section>
+
+  </main>
+
+  <section style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(20px,3vw,40px)">
+    <div data-reveal style="position:relative;overflow:hidden;background:#211D19;color:#EDE4D6;border-radius:clamp(20px,3vw,30px);padding:clamp(36px,6vw,72px) clamp(26px,5vw,64px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#E9A15C">Reuse</div>
+      <h2 style="margin:18px 0 0;max-width:20em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(24px,3.4vw,40px);line-height:1.14;letter-spacing:-.02em;color:#F4ECDD;text-wrap:balance">Point it at next month's export and re-run. The shortlist updates itself.</h2>
+      <p style="margin:18px 0 0;max-width:40em;font-size:15px;line-height:1.66;color:#B9AE9E">Because every step is deterministic and file-driven, the same notebook becomes a monthly routine, not a one-off analysis. Download it below, or read how it fits the wider program on the malaria project.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:30px">
+        <a href="assets/analyze_kakamega.ipynb" download="analyze_kakamega.ipynb" style="display:inline-flex;align-items:center;gap:10px;padding:14px 24px;background:#B85835;color:#F7F1E7;border-radius:100px;font-weight:600;font-size:14.5px;transition:transform .25s,background .25s" style-hover="background:#CC6A44;transform:translateY(-2px)">Download notebook <span style="font-family:'IBM Plex Mono',monospace">↓</span></a>
+        <a href="Work.html" style="display:inline-flex;align-items:center;padding:14px 24px;border:1px solid #4A433B;color:#EDE4D6;border-radius:100px;font-weight:600;font-size:14.5px;transition:all .25s" style-hover="border-color:#EDE4D6;background:rgba(237,228,214,.06)">Back to the project</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#211D19;color:#EDE4D6;margin-top:clamp(30px,4vw,56px);padding:clamp(48px,7vw,84px) clamp(20px,5vw,72px) 38px">
+    <div style="max-width:1180px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">+254 720 663 179<br>+254 739 105 140</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">LinkedIn</div>
+          <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:14.5px;color:#CFC5B6;border-bottom:1px solid #4A433B;transition:color .25s" style-hover="color:#E9A15C">osungu-richard</a>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Location</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">Kenya<br>GMT+3</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
+            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="Work.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Work</a>
+            <a href="About.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
+            <a href="Skills.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Skills</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">
+        <span>© 2026 Richard Osungu</span>
+        <span>MEAL · Research · Data Science</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#1B1815"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#1B1815"/><text x="600" y="410" font-family="monospace" font-size="150" fill="#E4926B" text-anchor="middle" font-weight="bold">.ipynb</text><text x="600" y="500" font-family="monospace" font-size="26" letter-spacing="8" fill="#8B8175" text-anchor="middle">KAKAMEGA MALARIA ANALYSIS</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__initDone) return;
+    root.__initDone = true;
+
+    // ---- Code blocks (faithful excerpts from analyze_kakamega.ipynb) ----
+    const codes = {
+      imports:
+`import numpy as np
+import pandas as pd
+import matplotlib
+matplotlib.use("Agg")            # headless: render straight to file
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter`,
+      load:
+`def load_and_clean(path, sheet):
+    """Read the workbook and coerce the count columns to numbers.
+    Blank cells become 0 for totals; a separate untouched copy is
+    kept so the consistency checks see the data as entered.
+    """
+    df = pd.read_excel(path, sheet_name=sheet)
+
+    missing = [c for c in COL.values() if c not in df.columns]
+    if missing:
+        raise KeyError("Expected columns not found:\\n  - "
+                       + "\\n  - ".join(missing))
+
+    df = df.dropna(subset=[COL["period"], COL["subcounty"]])
+    for c in numeric_cols:
+        df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
+    return df`,
+      rates:
+`def pct(n, d):
+    return (n / d * 100) if d else 0.0
+
+# Headline indicators, computed once and reused everywhere
+S["testing_rate"]  = pct(tot["tested"],   tot["suspected"])
+S["positivity"]    = pct(tot["pos"],      tot["tested"])     # TPR
+S["treatment_cov"] = pct(tot["treated"],  tot["pos"])`,
+      incidence:
+`def incidence_rows(S):
+    """Community-confirmed incidence & screening reach per 1,000 / yr."""
+    ann = 12.0 / S["n_months"]          # annualise from months present
+    rows = []
+    for r in S["subcounty"]:
+        pop = POP.get(r["sc"])          # 2019 census population
+        if not pop:
+            continue
+        rows.append(dict(sc=r["sc"],
+                         incidence=r["positive"]  * ann / pop * 1000,
+                         screening=r["suspected"] * ann / pop * 1000))
+    rows.sort(key=lambda x: -x["incidence"])
+    return rows`,
+      silent:
+`# Chronically silent CHUs: zero suspected cases across every month.
+# They never appear on the burden or operational-gap lists (no activity
+# to flag), so they get a dedicated named list to visit and resolve.
+silent = [c for c in chu_rows(df) if c["suspected"] == 0]
+
+silent_df = pd.DataFrame([{
+    "CHU": c["chu"], "Sub-county": c["subcounty"],
+    "Months reported": c["missing_months"],
+    "Action": "Field visit: confirm active; onboard or retire",
+} for c in silent])`
+    };
+
+    const esc = (s) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const re = /(#[^\n]*)|("""[\s\S]*?"""|'(?:\\.|[^'\\])*'|"(?:\\.|[^"\\])*")|\b(import|from|def|return|for|in|if|elif|else|try|except|raise|with|as|not|and|or|None|True|False|lambda|class|is|while|break|continue|global|assert|del)\b|\b(\d+\.?\d*)\b/g;
+    const hl = (code) => {
+      let out='', last=0, m;
+      while((m = re.exec(code))){
+        out += esc(code.slice(last, m.index));
+        if(m[1]) out += '<span style="color:#7E8F73;font-style:italic">'+esc(m[1])+'</span>';
+        else if(m[2]) out += '<span style="color:#CDAF77">'+esc(m[2])+'</span>';
+        else if(m[3]) out += '<span style="color:#E4926B">'+esc(m[3])+'</span>';
+        else if(m[4]) out += '<span style="color:#D98A5B">'+esc(m[4])+'</span>';
+        last = re.lastIndex;
+      }
+      out += esc(code.slice(last));
+      return out;
+    };
+    root.querySelectorAll('pre[data-code]').forEach(pre => {
+      const key = pre.getAttribute('data-code');
+      if(codes[key]) pre.innerHTML = hl(codes[key]);
+    });
+
+    // ---- Reveal on load + scroll (guarded, with safety net) ----
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(24px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

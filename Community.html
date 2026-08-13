@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  a{color:#9C4629;text-decoration:none}
+  a:hover{color:#B85835}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,5vw,72px) clamp(20px,3vw,40px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:26px">Community · Nyakach, Kisumu County</div>
+    <h1 data-reveal data-delay="80" style="margin:0;max-width:14em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;color:#211D17;text-wrap:balance">Where the work started.</h1>
+    <p data-reveal data-delay="160" style="margin:28px 0 0;max-width:42em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">Before I designed MEAL systems, I organised people. The habits I rely on now, meeting communities where they already are, listening before measuring, and making every gathering count, were learned in Nyakach with no budget and no framework document.</p>
+  </header>
+
+  <main style="max-width:1260px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <article data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
+        <aside style="flex:0 1 250px;min-width:210px">
+          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">01</div>
+          <div style="margin-top:28px;display:flex;flex-direction:column;gap:18px">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Role</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">Vice Chairperson, Nyakach University Students Association</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Timeline</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">December 2015</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Venues</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">Urudi Primary &amp; Urudi Secondary Schools</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Reach</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">Sub-county wide · hundreds attending</div></div>
+          </div>
+        </aside>
+
+        <div style="flex:1 1 460px;min-width:280px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:16px">Youth Mobilisation · Sport as Platform</div>
+          <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;color:#211D17;text-wrap:balance">The December 2015 holiday tournaments</h2>
+          <p style="margin:22px 0 0;max-width:46em;font-size:15.5px;line-height:1.7;color:#544B40">As Vice Chairperson under the outgoing leadership, I used the extended December holiday window to run a major youth mobilisation strategy. Sport was the instrument. I had seen that a tournament could pull together students from different university chapters and village wards in a way that no meeting ever would.</p>
+          <p style="margin:16px 0 0;max-width:46em;font-size:15.5px;line-height:1.7;color:#544B40">It was open to every young person in Nyakach, not only those home from university and secondary school. Idle youth were increasingly seen locally as a security risk, and the fastest way to change that was to give them somewhere to be.</p>
+
+          <div style="margin-top:34px">
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.2;color:#211D17">A sporting carnival across the sub-county</h3>
+            <p style="margin:14px 0 0;max-width:46em;font-size:15px;line-height:1.7;color:#544B40">Football for boys and girls was hosted at centralised community fields at Urudi Primary and Urudi Secondary Schools, pulling village teams together to combat holiday idleness and surface raw local talent. Netball for girls and volleyball for boys ran in parallel, turning the fixture list into an inclusive, sub-county-wide carnival that brought hundreds of local youth, elders and professionals into the same space.</p>
+          </div>
+
+          <div style="margin-top:30px;padding:clamp(24px,3vw,34px);background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">The captive-audience strategy</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.25;color:#211D17">The crowds were the point, not the by-product</h3>
+            <p style="margin:14px 0 0;max-width:44em;font-size:15px;line-height:1.7;color:#544B40">The tournaments were never only recreation. I used the crowds they drew as a platform for public youth advocacy, for talking openly about academic mentorship, and for laying the conceptual groundwork for the environmental drives that followed. An audience of hundreds, already gathered and already listening, is the most effective mobilisation channel a community organiser has.</p>
+          </div>
+
+          <div style="margin-top:30px">
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.2;color:#211D17">Two players scouted into the junior leagues</h3>
+            <p style="margin:14px 0 0;max-width:46em;font-size:15px;line-height:1.7;color:#544B40">The carnival drew scouts as well as crowds, and two of our footballers were signed into Kenyan junior leagues on the strength of what they played that December. The talent was always there. What Nyakach lacked was a stage where anyone could see it.</p>
+          </div>
+
+          <div style="margin-top:30px">
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.2;color:#211D17">Prizes that stayed in the community</h3>
+            <p style="margin:14px 0 0;max-width:46em;font-size:15px;line-height:1.7;color:#544B40">Winning teams in every category took home monetary awards, uniforms and balls, so the investment stayed with the teams and kept the sport alive long after the holiday ended.</p>
+          </div>
+
+          <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px">
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Youth mobilisation</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Sport for development</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Advocacy</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Academic mentorship</span>
+          </div>
+
+          <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:#DDD1BF;border:1px solid #DDD1BF;border-radius:16px;overflow:hidden">
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#B85835">3</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Sports</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">4</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Categories</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">2</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Host venues</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">100s</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Youth &amp; elders reached</div></div>
+          </div>
+
+          <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:14px">
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-kickoff.jpeg" alt="Officials at the centre circle before kick-off" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Kick-off, Nyakach youth tournament</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-match.jpeg" alt="Football match in progress on a village pitch" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Match play across the wards</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-team-yellow.jpeg" alt="Team in yellow kit huddled with officials" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Team huddle before a fixture</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-team-orange.jpeg" alt="Team in orange kit lined up for a photograph" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Village side, boys football</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-team-green.jpeg" alt="Team in green kit lined up with match balls" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Competing side with match balls</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-team-red.jpeg" alt="Team in red kit lined up with officials" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Team line-up with officials</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-trophies.jpeg" alt="Guests seated beside trophies at the prize-giving" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Prize-giving: trophies for the winners</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/tournament-prize-balls.jpeg" alt="Four match balls awarded as prizes" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Match balls awarded to winning teams</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/nusa-tshirt-concept.jpeg" alt="Design concept for the NUSA tournament shirt" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">NUSA tournament shirt concept</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/nusa-hall-meeting-2015.jpeg" alt="Young people seated in a community hall meeting" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Planning meeting, June 2015</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
+        <aside style="flex:0 1 250px;min-width:210px">
+          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">02</div>
+          <div style="margin-top:28px;display:flex;flex-direction:column;gap:18px">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Role</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">Chairperson, Nyakach University Students Association</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Timeline</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">2016 · across two terms</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Funding</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">Self-funded, pooled from the cabinet</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Reach</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">35 of 54 secondary schools in Nyakach</div></div>
+          </div>
+        </aside>
+
+        <div style="flex:1 1 460px;min-width:280px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:16px">Academic Mentorship · Self-Funded Delivery</div>
+          <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;color:#211D17;text-wrap:balance">The 2016 institutional school visitations</h2>
+          <p style="margin:22px 0 0;max-width:46em;font-size:15.5px;line-height:1.7;color:#544B40">After the public success of the 2015 tournaments the transition took place and I took office as NUSA Chairperson. My administration immediately leveraged that momentum into a relentless academic mentorship and motivation tour.</p>
+
+          <div style="margin-top:34px">
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.2;color:#211D17">The 15-school sprint</h3>
+            <p style="margin:14px 0 0;max-width:46em;font-size:15px;line-height:1.7;color:#544B40">Using our own pooled resources and pocket money, my cabinet and I physically visited 15 secondary schools across Nyakach in the space of a single month, from a total of 54 in the sub-county. The following term the team returned to the road and covered another 20.</p>
+          </div>
+
+          <div style="margin-top:30px;padding:clamp(24px,3vw,34px);background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">Impact and mindset shift</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.25;color:#211D17">Proof that the community could fund its own development</h3>
+            <p style="margin:14px 0 0;max-width:44em;font-size:15px;line-height:1.7;color:#544B40">The team gave intensive talks to thousands of high school students: career path guidance, university application insights, and plain exposure to what was possible. The tour is still remembered locally for shifting how students saw their own prospects, and for proving that NUSA could execute large-scale community development on its own resources, without waiting on political handouts.</p>
+          </div>
+
+          <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px">
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Academic mentorship</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Career guidance</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Self-funded</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Youth empowerment</span>
+          </div>
+
+          <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:#DDD1BF;border:1px solid #DDD1BF;border-radius:16px;overflow:hidden">
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#B85835">35</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Schools visited</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">15</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">In the first month</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">1000s</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Students reached</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">0</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">External funding</div></div>
+          </div>
+
+          <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:14px">
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/schools-assembly.jpeg" alt="Secondary school students seated outdoors for a talk" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Students gathered for a mentorship talk</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/schools-book-donation.jpeg" alt="Four men handing over a stack of books" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Receiving book donations from a well wisher for donation to a school</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
+        <aside style="flex:0 1 250px;min-width:210px">
+          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">03</div>
+          <div style="margin-top:28px;display:flex;flex-direction:column;gap:18px">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Role</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">Chairperson, NUSA · originator of the fundraiser</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Timeline</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">2016 · across the rainy seasons</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Funding model</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">M-Changa crowdfunding: professionals, alumni &amp; diaspora</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Reach</div><div style="margin-top:6px;font-size:14px;color:#3A342C;line-height:1.4">All 54 secondary schools, plus selected primaries</div></div>
+          </div>
+        </aside>
+
+        <div style="flex:1 1 460px;min-width:280px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:16px">Climate Resilience · Community Crowdfunding</div>
+          <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(26px,3.4vw,42px);line-height:1.1;letter-spacing:-.02em;color:#211D17;text-wrap:balance">Launching the Nyakach Go Green Initiative</h2>
+          <p style="margin:22px 0 0;max-width:46em;font-size:15.5px;line-height:1.7;color:#544B40">The institutional trust built through the sports tournaments and the school mentorship tours gave my administration exactly the leverage needed to launch the Nyakach Go Green Initiative. Two years of showing up had earned the standing to ask for something bigger.</p>
+
+          <div style="margin-top:30px;padding:clamp(24px,3vw,34px);background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9C4629;margin-bottom:14px">The M-Changa crowdfunding blueprint</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.25;color:#211D17">A funding route the community owned outright</h3>
+            <p style="margin:14px 0 0;max-width:44em;font-size:15px;line-height:1.7;color:#544B40">To guarantee full self-reliance and transparent community ownership, the 2016 cabinet established the Nyakach Go Green M-Changa fundraiser, an idea I originated. It let Nyakach professionals, alumni and the diaspora fund climate resilience efforts directly, with the flow of money visible to everyone contributing.</p>
+          </div>
+
+          <div style="margin-top:30px">
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.1vw,24px);line-height:1.2;color:#211D17">From sports fields to tree nurseries</h3>
+            <p style="margin:14px 0 0;max-width:46em;font-size:15px;line-height:1.7;color:#544B40">The same youth networks that had competed in the 2015 tournaments were remobilised through the 2016 rainy seasons. NUSA members set up physical tree nurseries and planted in the very secondary schools they had visited for academic mentorship, all 54 of them, along with selected primaries. Siting the planting inside schools meant the environmental clubs already there would nurture the trees after we left, which is the only reason seedlings survive.</p>
+            <p style="margin:16px 0 0;max-width:46em;font-size:15px;line-height:1.7;color:#544B40">The initiative has run every year since its inception. That is the part I am proudest of, because a campaign that outlives the cabinet which started it was never really about the cabinet.</p>
+          </div>
+
+          <div style="margin-top:30px;display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px">
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Climate resilience</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Crowdfunding</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Diaspora engagement</span>
+            <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Sustainability by design</span>
+          </div>
+
+          <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:#DDD1BF;border:1px solid #DDD1BF;border-radius:16px;overflow:hidden">
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#B85835">54</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Secondary schools planted</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">10 yrs</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Running annually since 2016</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">3</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Donor groups tapped</div></div>
+            <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,3vw,38px);line-height:1;color:#211D17">100%</div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Community funded</div></div>
+          </div>
+
+          <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:14px">
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-planting-team.jpeg" alt="Four NUSA members kneeling to plant a tree seedling" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Planting a seedling, Go Green launch</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-planting-group.jpeg" alt="A group planting seedlings on a school compound" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">NUSA members planting on a school compound</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-seedling-van.jpeg" alt="A vehicle loaded with potted tree seedlings" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Seedlings in transit to the schools</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-handover.jpeg" alt="Seedlings handed over in front of primary school pupils" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Seedling handover at a primary school</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-primary-group.jpeg" alt="A large group of primary pupils holding seedlings" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Pupils with their seedlings</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-apoko-school.jpeg" alt="Students outside Apoko Mixed Secondary School with seedlings" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Apoko Mixed Secondary School</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-secondary-group.jpeg" alt="Secondary students outside a classroom block with seedlings" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Secondary school planting day</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-planting-pupils.jpeg" alt="Three adults planting a seedling watched by pupils" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Planting alongside pupils</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-nursery-children.jpeg" alt="Children carrying seedlings and water to a planting site" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Carrying seedlings to the site</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-seedlings-tray.jpeg" alt="Students standing beside a tray of seedlings" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">A batch of seedlings ready to plant</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-planting-students.jpeg" alt="Students watching a seedling being planted" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Students at a planting demonstration</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-volunteers.jpeg" alt="NUSA members standing with seedlings outside a classroom" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">NUSA members on a school visit</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-school-handover.jpeg" alt="A seedling presented to secondary school students" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Alongside Olivia Ranguma, Kisumu County First Lady, to commemorate World Environment Day, Thurdibuoro Secondary School and Koguta Forest</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-planting-fence.jpeg" alt="NUSA members planting along a fence line" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Planting along a boundary line</figcaption>
+            </figure>
+            <figure style="margin:0;display:flex;flex-direction:column;border:1px solid #E0D5C4;border-radius:14px;overflow:hidden;background:#F8F3EA">
+              <img src="assets/img/comm/gogreen-hillside.jpeg" alt="Three organisers holding seedlings on a hillside" loading="lazy" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+              <figcaption style="padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;line-height:1.45;color:#8A7F6E">Organizers at Kianjai Hills, Meru University of Science and Technology, after a successful tree planting exercise to honour World Environment Day</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+    <section style="border-top:1px solid #DDD1BF;padding:clamp(38px,5vw,64px) 0 0">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:clamp(24px,3vw,36px)">Also led</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2vw,24px)">
+        <div data-reveal style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;padding:26px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Student leadership</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:21px;line-height:1.25;color:#211D17">Two terms at NUSA, Vice Chairperson then Chairperson</h3>
+          <p style="margin:12px 0 0;font-size:14px;line-height:1.6;color:#544B40">Elected Vice Chairperson, then Chairperson, mobilising resources and running community-development initiatives on behalf of the student body across Nyakach.</p>
+        </div>
+        <div data-reveal data-delay="80" style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;padding:26px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Resource mobilisation</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:21px;line-height:1.25;color:#211D17">Fundraising &amp; Resource Mobilization training</h3>
+          <p style="margin:12px 0 0;font-size:14px;line-height:1.6;color:#544B40">Formal training with the Kenya Community Development Fund in 2019, sharpening the self-funding approach the Go Green campaign had proven on the ground.</p>
+        </div>
+        <div data-reveal data-delay="160" style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;padding:26px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Inclusion</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:21px;line-height:1.25;color:#211D17">Mobility aids for 300+ persons with disabilities</h3>
+          <p style="margin:12px 0 0;font-size:14px;line-height:1.6;color:#544B40">A Kisumu County mobilisation delivering customised walking aids, working with healthcare providers, NGOs and community leaders. <a href="Work.html">See it under Work</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <div data-reveal style="margin-top:clamp(40px,5vw,64px);padding:clamp(28px,4vw,44px);background:#211D19;color:#EDE4D6;border-radius:clamp(20px,3vw,28px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#E9A15C">The through line</div>
+      <p style="margin:18px 0 0;max-width:34em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(20px,2.6vw,30px);line-height:1.3;letter-spacing:-.01em;color:#F4ECDD;text-wrap:pretty">The instinct is the same one I use now. Find where people already are, meet them there, and make the encounter count.</p>
+      <a href="note-grassroots-to-data.html" style="margin-top:26px;display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:#B85835;color:#F7F1E7;border-radius:100px;font-weight:600;font-size:14.5px;transition:transform .25s,background .25s" style-hover="background:#CC6A44;transform:translateY(-2px)">Read the full essay <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
+    </div>
+
+  </main>
+
+  <a href="About.html" data-reveal style="display:block;margin-top:clamp(40px,6vw,72px);border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
+    <div style="max-width:1260px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:12px">Next</div>
+        <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;color:#211D17">About Richard</div>
+      </div>
+      <div style="font-family:'Newsreader',serif;font-size:clamp(34px,5vw,56px);color:#B85835">→</div>
+    </div>
+  </a>
+
+  <footer style="background:#211D19;color:#EDE4D6;padding:clamp(54px,7vw,96px) clamp(20px,5vw,72px) 38px">
+    <div style="max-width:1260px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">+254 720 663 179<br>+254 739 105 140</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">LinkedIn</div>
+          <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:14.5px;color:#CFC5B6;border-bottom:1px solid #4A433B;transition:color .25s" style-hover="color:#E9A15C">osungu-richard</a>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Location</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">Kenya<br>GMT+3</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
+            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="Work.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Work</a>
+            <a href="About.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
+            <a href="Writing.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Writing</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">
+        <span>© 2026 Richard Osungu</span>
+        <span>MEAL · Research · Data Science</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><circle cx="600" cy="380" r="120" fill="none" stroke="#B85835" stroke-width="14"/><text x="600" y="600" font-family="monospace" font-size="26" letter-spacing="8" fill="#8A7F6E" text-anchor="middle">COMMUNITY · NYAKACH</text></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__initDone) return;
+    root.__initDone = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(24px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

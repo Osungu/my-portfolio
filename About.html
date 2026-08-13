@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  @keyframes barPulse{0%,100%{transform:scaleY(.32)}50%{transform:scaleY(1)}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1260px;margin:0 auto;padding:clamp(44px,7vw,96px) clamp(20px,5vw,72px) clamp(24px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
+      <div style="flex:1 1 460px;min-width:290px">
+        <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:24px">About</div>
+        <h1 data-reveal data-delay="70" style="margin:0;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,5.6vw,72px);line-height:1.05;letter-spacing:-.025em;color:#211D17">Richard Osungu</h1>
+        <div data-reveal data-delay="130" style="margin-top:14px;font-family:'Newsreader',serif;font-style:italic;font-weight:300;font-size:clamp(19px,2.2vw,26px);color:#9C4629">MEAL, Research &amp; Data Science professional</div>
+        <div data-reveal data-delay="200" style="margin-top:30px;display:flex;flex-direction:column;gap:18px;max-width:38em">
+          <p style="margin:0;font-size:clamp(15.5px,1.5vw,17.5px);line-height:1.72;color:#4E463C">I've spent over seven years turning the messiness of field programs into evidence people can trust and use. My work sits at the intersection of monitoring &amp; evaluation, research, and data science, designing the systems that capture what's happening, and the analysis that explains why.</p>
+          <p style="margin:0;font-size:clamp(15.5px,1.5vw,17.5px);line-height:1.72;color:#4E463C">Today I'm a MEAL Manager providing strategic leadership on complex, multi-donor portfolios, including Global Fund-supported malaria interventions, mental health, disability inclusion and basic-needs programming. I work confidently across both qualitative and quantitative research. I collect qualitative evidence through key informant interviews and focus group discussions, while analysing quantitative data using Advanced Excel, SPSS, and Python. To communicate findings effectively, I develop interactive visualisations and live dashboards in Power BI and Looker Studio, enabling stakeholders to monitor performance and make informed decisions. Ultimately, my focus is on translating evidence into clear, actionable insights that drive programme improvement.</p>
+          <p style="margin:0;font-size:clamp(15.5px,1.5vw,17.5px);line-height:1.72;color:#4E463C">Alongside my practice, I'm pursuing an MSc in Data Science to deepen the quantitative and machine-learning side of evaluation, with a growing focus on implementation research and digital health.</p>
+        </div>
+      </div>
+      <div data-reveal data-delay="180" style="flex:0 1 340px;min-width:250px;display:flex;justify-content:center">
+        <div style="position:relative;width:min(340px,80vw)">
+          <div style="position:relative;z-index:2;border-radius:200px 200px 20px 20px;overflow:hidden;border:1px solid #E0D5C4;aspect-ratio:4/5;background:#EFE6D6;box-shadow:0 30px 66px -32px rgba(60,40,25,.42)">
+            <img src="assets/img/portrait.jpg" alt="Richard Osungu" style="display:block;width:100%;height:100%;object-fit:cover;object-position:center">
+          </div>
+          <div style="position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);z-index:3;background:#211D19;color:#EDE4D6;border-radius:100px;padding:9px 18px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;box-shadow:0 14px 28px -16px rgba(60,40,25,.6)">Kenya</div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:#DDD1BF;border:1px solid #DDD1BF;border-radius:16px;overflow:hidden">
+      <div style="background:#F8F3EA;padding:22px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Currently</div><div style="margin-top:9px;font-size:14.5px;line-height:1.45;color:#3A342C">MEAL Manager, TINADA</div></div>
+      <div style="background:#F8F3EA;padding:22px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Studying</div><div style="margin-top:9px;font-size:14.5px;line-height:1.45;color:#3A342C">MSc Data Science, UEL</div></div>
+      <div style="background:#F8F3EA;padding:22px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Focus</div><div style="margin-top:9px;font-size:14.5px;line-height:1.45;color:#3A342C">MEAL · Research · Data</div></div>
+      <div style="background:#F8F3EA;padding:22px 24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E">Experience</div><div style="margin-top:9px;font-size:14.5px;line-height:1.45;color:#3A342C">7+ years across 6 orgs</div></div>
+    </div>
+  </header>
+
+  <section style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,5vw,72px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:clamp(30px,4vw,52px)">Professional experience</div>
+
+    <div style="position:relative;border-left:1px solid #DDD1BF;margin-left:6px;display:flex;flex-direction:column;gap:clamp(34px,4vw,54px)">
+
+      <div data-reveal style="position:relative;padding-left:clamp(26px,4vw,46px)">
+        <span style="position:absolute;left:-6.5px;top:5px;width:12px;height:12px;border-radius:50%;background:#B85835;border:3px solid #F4EEE4"></span>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#9C4629">APR 2025 – PRESENT</div>
+        <h3 style="margin:10px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">MEAL Manager</h3>
+        <div style="margin-top:5px;font-size:14.5px;color:#8A7F6E">TINADA Youth Action Africa</div>
+        <p style="margin:14px 0 0;max-width:52em;font-size:15px;line-height:1.65;color:#544B40">Strategic leadership on MEAL systems for a complex, multi-donor portfolio: malaria control across 528 community health units, plus the Bridge Beyond Barriers (B3) and Basic Needs projects integrating disability inclusion and mental health. Supervise 3 MEAL Officers, 25 coaches and 20 peer educators; strengthened accountability to affected populations (AAP).</p>
+      </div>
+
+      <div data-reveal style="position:relative;padding-left:clamp(26px,4vw,46px)">
+        <span style="position:absolute;left:-6.5px;top:5px;width:12px;height:12px;border-radius:50%;background:#B85835;border:3px solid #F4EEE4"></span>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#9C4629">JAN – DEC 2025</div>
+        <h3 style="margin:10px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">MEAL Officer</h3>
+        <div style="margin-top:5px;font-size:14.5px;color:#8A7F6E">Secours Islamique France (SIF)</div>
+        <p style="margin:14px 0 0;max-width:52em;font-size:15px;line-height:1.65;color:#544B40">Thematic qualitative analysis of community perceptions of humanitarian interventions; descriptive and comparative statistics across baseline, endline and post-distribution monitoring datasets; supported mixed-methods research including rapid needs assessments. Documented and disseminated 5 lessons-learned briefs to strengthen organizational learning.</p>
+      </div>
+
+      <div data-reveal style="position:relative;padding-left:clamp(26px,4vw,46px)">
+        <span style="position:absolute;left:-6.5px;top:5px;width:12px;height:12px;border-radius:50%;background:#B85835;border:3px solid #F4EEE4"></span>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#9C4629">JUL – OCT 2024</div>
+        <h3 style="margin:10px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">Temporary MEL Assistant</h3>
+        <div style="margin-top:5px;font-size:14.5px;color:#8A7F6E">Practical Action Kenya</div>
+        <p style="margin:14px 0 0;max-width:52em;font-size:15px;line-height:1.65;color:#544B40">Qualitative field assessments of youth engagement within the Resilient Agriculture project; quantitative trend analysis to sharpen real-time monitoring; designed and facilitated 15 capacity-building sessions on MEL standards and donor compliance; managed deployment and quality of ONA and Kobo Toolbox data collection.</p>
+      </div>
+
+      <div data-reveal style="position:relative;padding-left:clamp(26px,4vw,46px)">
+        <span style="position:absolute;left:-6.5px;top:5px;width:12px;height:12px;border-radius:50%;background:#B85835;border:3px solid #F4EEE4"></span>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#9C4629">MAR 2023 – APR 2024</div>
+        <h3 style="margin:10px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">Market Research Analyst</h3>
+        <div style="margin-top:5px;font-size:14.5px;color:#8A7F6E">Belfast Millers Limited</div>
+        <p style="margin:14px 0 0;max-width:52em;font-size:15px;line-height:1.65;color:#544B40">Market research on animal-feed industry trends, competitors and customer preferences; qualitative customer-feedback analyses to inform product development; authored 10 research reports; built interactive Power BI dashboards synthesizing qualitative insight with sales data for senior management.</p>
+      </div>
+
+      <div data-reveal style="position:relative;padding-left:clamp(26px,4vw,46px)">
+        <span style="position:absolute;left:-6.5px;top:5px;width:12px;height:12px;border-radius:50%;background:#B85835;border:3px solid #F4EEE4"></span>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#9C4629">NOV 2020 – DEC 2022</div>
+        <h3 style="margin:10px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">MEAL Officer</h3>
+        <div style="margin-top:5px;font-size:14.5px;color:#8A7F6E">State Dept. for Fisheries, Aquaculture &amp; the Blue Economy (ABDP)</div>
+        <p style="margin:14px 0 0;max-width:52em;font-size:15px;line-height:1.65;color:#544B40">Developed and managed M&amp;E frameworks that improved data-driven insight for government and donor stakeholders by 25%; ran quarterly data-quality audits reducing discrepancies by 30%; led data-governance aligning outcomes to national KPIs; produced 3 case studies documenting farmer technology adoption in the aquaculture value chain.</p>
+      </div>
+
+      <div data-reveal style="position:relative;padding-left:clamp(26px,4vw,46px)">
+        <span style="position:absolute;left:-6.5px;top:5px;width:12px;height:12px;border-radius:50%;background:#B85835;border:3px solid #F4EEE4"></span>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#9C4629">SEP 2017 – SEP 2020</div>
+        <h3 style="margin:10px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">M&amp;E Assistant · Case Manager</h3>
+        <div style="margin-top:5px;font-size:14.5px;color:#8A7F6E">Women Fighting AIDS in Kenya (WOFAK)</div>
+        <p style="margin:14px 0 0;max-width:52em;font-size:15px;line-height:1.65;color:#544B40">Qualitative interviews with caregivers, children and stakeholders to assess HIV/AIDS interventions; analysis of case-management reports into evidence-based recommendations; facilitated M&amp;E training for 10 program officers; integrated the Child Protection Information Management System (CPIMS) for real-time tracking of vulnerable children.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="max-width:1260px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(48px,7vw,90px)">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(36px,5vw,72px)">
+      <div style="flex:1 1 340px;min-width:280px">
+        <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:28px;border-top:1px solid #DDD1BF;padding-top:26px">Education</div>
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <div data-reveal>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9C4629">2026 – PRESENT · ONGOING</div>
+            <h3 style="margin:8px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(20px,2.3vw,26px);color:#211D17;line-height:1.2">MSc, Data Science</h3>
+            <div style="margin-top:5px;font-size:14px;color:#7A7061">University of East London</div>
+          </div>
+          <div data-reveal data-delay="80">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9C4629">2019</div>
+            <h3 style="margin:8px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(20px,2.3vw,26px);color:#211D17;line-height:1.2">BSc, Mathematics &amp; Computer Science</h3>
+            <div style="margin-top:5px;font-size:14px;color:#7A7061">Meru University of Science and Technology</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:1 1 340px;min-width:280px">
+        <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:28px;border-top:1px solid #DDD1BF;padding-top:26px">Certifications &amp; training</div>
+        <div style="display:flex;flex-direction:column">
+          <div data-reveal style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #E4DACB"><span style="font-size:14.5px;color:#3A342C;line-height:1.4;max-width:26em">Data Science for Monitoring &amp; Evaluation, Humanitarian Data Science Academy</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C;white-space:nowrap">2024</span></div>
+          <div data-reveal data-delay="60" style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #E4DACB"><span style="font-size:14.5px;color:#3A342C;line-height:1.4;max-width:26em">Artificial Intelligence Essentials, ALX Africa</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C;white-space:nowrap">2024</span></div>
+          <div data-reveal data-delay="120" style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #E4DACB"><span style="font-size:14.5px;color:#3A342C;line-height:1.4;max-width:26em">Project Management Essentials, DisasterReady.org</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C;white-space:nowrap">2026</span></div>
+          <div data-reveal data-delay="180" style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #E4DACB"><span style="font-size:14.5px;color:#3A342C;line-height:1.4;max-width:26em">Certificate in Monitoring &amp; Evaluation, Mount Kenya University</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C;white-space:nowrap">2020</span></div>
+          <div data-reveal data-delay="240" style="display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #E4DACB"><span style="font-size:14.5px;color:#3A342C;line-height:1.4;max-width:26em">Fundraising &amp; Resource Mobilization, Kenya Community Development Fund</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C;white-space:nowrap">2019</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1260px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(56px,8vw,100px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:28px;border-top:1px solid #DDD1BF;padding-top:26px">Volunteering &amp; leadership</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(16px,2vw,24px)">
+      <div data-reveal style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:16px;padding:26px">
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:20px;color:#211D17;line-height:1.25">Chairperson, Nyakach University Students Association</h3>
+        <p style="margin:12px 0 0;font-size:14px;line-height:1.55;color:#5E554A">Mobilized resources and led community-development initiatives on behalf of the student body, after serving as Vice Chairperson.</p>
+      </div>
+      <div data-reveal data-delay="80" style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:16px;padding:26px">
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:20px;color:#211D17;line-height:1.25">Tree-Planting Initiative, Nyakach</h3>
+        <p style="margin:12px 0 0;font-size:14px;line-height:1.55;color:#5E554A">Led an environmental-conservation drive to promote community resilience, built on the youth network the tournaments had assembled.</p>
+      </div>
+      <div data-reveal data-delay="160" style="background:#F8F3EA;border:1px solid #DDD1BF;border-radius:16px;padding:26px">
+        <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:20px;color:#211D17;line-height:1.25">December 2015 Holiday Tournaments, Nyakach</h3>
+        <p style="margin:12px 0 0;font-size:14px;line-height:1.55;color:#5E554A">As Vice Chairperson, ran a sub-county football, netball and volleyball carnival, using the crowds as a platform for youth advocacy and mentorship. <a href="Community.html">Read the full story</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <a href="Skills.html" data-reveal style="display:block;border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
+    <div style="max-width:1260px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:12px">Next</div>
+        <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;color:#211D17">Skills &amp; toolkit</div>
+      </div>
+      <div style="font-family:'Newsreader',serif;font-size:clamp(34px,5vw,56px);color:#B85835">→</div>
+    </div>
+  </a>
+
+  <footer style="background:#211D19;color:#EDE4D6;padding:clamp(54px,7vw,96px) clamp(20px,5vw,72px) 38px">
+    <div style="max-width:1260px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">+254 720 663 179<br>+254 739 105 140</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">LinkedIn</div>
+          <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:14.5px;color:#CFC5B6;border-bottom:1px solid #4A433B;transition:color .25s" style-hover="color:#E9A15C">osungu-richard</a>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Location</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">Kenya<br>GMT+3</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
+            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="Work.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Work</a>
+            <a href="Writing.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Writing</a>
+            <a href="Skills.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Skills</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">
+        <span>© 2026 Richard Osungu</span>
+        <span>MEAL · Research · Data Science</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="440" font-family="Georgia,serif" font-size="170" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="520" font-family="monospace" font-size="26" letter-spacing="10" fill="#8A7F6E" text-anchor="middle">MEAL · RESEARCH · DATA</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__revealInit) return;
+    root.__revealInit = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(24px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

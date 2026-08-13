@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  input,textarea{font-family:inherit}
+  input::placeholder,textarea::placeholder{color:#A79B89}
+  @keyframes barPulse{0%,100%{transform:scaleY(.32)}50%{transform:scaleY(1)}}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(76,122,75,.5)}70%{box-shadow:0 0 0 9px rgba(76,122,75,0)}100%{box-shadow:0 0 0 0 rgba(76,122,75,0)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,5vw,72px) clamp(20px,3vw,40px)">
+    <div data-reveal style="display:inline-flex;align-items:center;gap:11px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#9A5A38;margin-bottom:24px">
+      <span style="width:8px;height:8px;border-radius:50%;background:#4C7A4B;animation:pulseDot 2.4s infinite"></span>
+      Open to opportunities
+    </div>
+    <h1 data-reveal data-delay="70" style="margin:0;max-width:16em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,78px);line-height:1.03;letter-spacing:-.025em;color:#211D17;text-wrap:balance">Let's turn data into <em style="font-style:italic;color:#B85835">decisions</em>, together.</h1>
+    <p data-reveal data-delay="150" style="margin:28px 0 0;max-width:38em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">Whether you're hiring for a MEAL or data-science role, planning an evaluation, or just want to compare notes on evidence in the field, I'd love to hear from you.</p>
+  </header>
+
+  <section style="max-width:1260px;margin:0 auto;padding:clamp(24px,4vw,48px) clamp(20px,5vw,72px) clamp(48px,6vw,80px)">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px)">
+
+      <div style="flex:1 1 320px;min-width:280px">
+        <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:30px;border-top:1px solid #DDD1BF;padding-top:26px">Direct</div>
+        <div style="display:flex;flex-direction:column;gap:26px">
+          <div data-reveal>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E;margin-bottom:9px">Email</div>
+            <a href="mailto:richyosu@gmail.com" style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(22px,2.8vw,32px);letter-spacing:-.01em;color:#211D17;transition:color .25s" style-hover="color:#B85835">richyosu@gmail.com</a>
+          </div>
+          <div data-reveal data-delay="70">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E;margin-bottom:9px">Phone</div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <a href="tel:+254720663179" style="font-size:16px;color:#3A342C;transition:color .2s" style-hover="color:#B85835">+254 720 663 179</a>
+              <a href="tel:+254739105140" style="font-size:16px;color:#3A342C;transition:color .2s" style-hover="color:#B85835">+254 739 105 140</a>
+            </div>
+          </div>
+          <div data-reveal data-delay="140">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E;margin-bottom:9px">LinkedIn</div>
+            <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="font-size:16px;color:#3A342C;border-bottom:1px solid #D8C9B6;padding-bottom:2px;transition:color .2s" style-hover="color:#B85835">linkedin.com/in/osungu-richard</a>
+          </div>
+          <div data-reveal data-delay="210">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#A2937E;margin-bottom:9px">Based in</div>
+            <div style="font-size:16px;color:#3A342C">Kenya · GMT+3</div>
+          </div>
+          <div data-reveal data-delay="280" style="margin-top:6px;padding:20px 22px;background:#211D19;border-radius:16px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#E9A15C;margin-bottom:10px">Looking for</div>
+            <div style="font-size:14.5px;line-height:1.6;color:#D8CEBE">MEAL, research &amp; data-science roles: full-time, consulting, or short-term evaluations across humanitarian, health &amp; development programs.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:1 1 400px;min-width:300px">
+        <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:30px;border-top:1px solid #DDD1BF;padding-top:26px">Send a message</div>
+        <form onSubmit="{{ onSubmit }}" data-reveal data-delay="80" style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;flex-wrap:wrap;gap:20px">
+            <label style="flex:1 1 180px;display:flex;flex-direction:column;gap:9px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F6E">Your name</span>
+              <input name="fld_name" type="text" placeholder="Jane Doe" style="padding:14px 16px;background:#FBF7EF;border:1px solid #DDD1BF;border-radius:12px;font-size:15px;color:#23201C;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#B85835;box-shadow:0 0 0 3px rgba(184,88,53,.15)">
+            </label>
+            <label style="flex:1 1 180px;display:flex;flex-direction:column;gap:9px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F6E">Your email</span>
+              <input name="fld_email" type="email" placeholder="jane@company.org" style="padding:14px 16px;background:#FBF7EF;border:1px solid #DDD1BF;border-radius:12px;font-size:15px;color:#23201C;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#B85835;box-shadow:0 0 0 3px rgba(184,88,53,.15)">
+            </label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F6E">Message</span>
+            <textarea name="fld_msg" rows="6" placeholder="A little about the role or project…" style="padding:14px 16px;background:#FBF7EF;border:1px solid #DDD1BF;border-radius:12px;font-size:15px;color:#23201C;outline:none;resize:vertical;line-height:1.5;transition:border-color .2s,box-shadow .2s" style-focus="border-color:#B85835;box-shadow:0 0 0 3px rgba(184,88,53,.15)"></textarea>
+          </label>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+            <button type="submit" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;background:#B85835;color:#F7F1E7;border:none;border-radius:100px;font-weight:600;font-size:15px;cursor:pointer;transition:transform .25s,background .25s;box-shadow:0 14px 30px -14px rgba(184,88,53,.7)" style-hover="background:#9C4629;transform:translateY(-2px)">Send message <span style="font-family:'IBM Plex Mono',monospace">→</span></button>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#A2937E">Opens your email app</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <a href="Home.html" data-reveal style="display:block;border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
+    <div style="max-width:1260px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:12px">Back to start</div>
+        <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(26px,3.6vw,44px);letter-spacing:-.02em;color:#211D17">Home</div>
+      </div>
+      <div style="font-family:'Newsreader',serif;font-size:clamp(30px,4.5vw,50px);color:#B85835">↑</div>
+    </div>
+  </a>
+
+  <footer style="background:#211D19;color:#EDE4D6;padding:clamp(40px,5vw,60px) clamp(20px,5vw,72px)">
+    <div style="max-width:1260px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px">
+      <div style="display:flex;flex-direction:column;line-height:1">
+        <span style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;letter-spacing:-.015em">Richard Osungu</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#8B8175;margin-top:7px">MEAL · Research · Data Science</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12px">
+        <a href="Home.html" style="padding:8px 13px;border-radius:100px;color:#CFC5B6;transition:background .2s,color .2s" style-hover="background:rgba(237,228,214,.08);color:#F4ECDD">Home</a>
+        <a href="Work.html" style="padding:8px 13px;border-radius:100px;color:#CFC5B6;transition:background .2s,color .2s" style-hover="background:rgba(237,228,214,.08);color:#F4ECDD">Work</a>
+        <a href="About.html" style="padding:8px 13px;border-radius:100px;color:#CFC5B6;transition:background .2s,color .2s" style-hover="background:rgba(237,228,214,.08);color:#F4ECDD">About</a>
+        <a href="Writing.html" style="padding:8px 13px;border-radius:100px;color:#CFC5B6;transition:background .2s,color .2s" style-hover="background:rgba(237,228,214,.08);color:#F4ECDD">Writing</a>
+        <a href="Skills.html" style="padding:8px 13px;border-radius:100px;color:#CFC5B6;transition:background .2s,color .2s" style-hover="background:rgba(237,228,214,.08);color:#F4ECDD">Skills</a>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">© 2026 · Kenya</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="440" font-family="Georgia,serif" font-size="170" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="520" font-family="monospace" font-size="26" letter-spacing="10" fill="#8A7F6E" text-anchor="middle">MEAL · RESEARCH · DATA</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return {
+      root: this.rootRef,
+      onSubmit: (e) => {
+        e.preventDefault();
+        const f = e.target;
+        const name = (f.elements['fld_name'] && f.elements['fld_name'].value || '').trim();
+        const email = (f.elements['fld_email'] && f.elements['fld_email'].value || '').trim();
+        const msg = (f.elements['fld_msg'] && f.elements['fld_msg'].value || '').trim();
+        const subject = encodeURIComponent(name ? ('Portfolio enquiry from ' + name) : 'Portfolio enquiry');
+        const bodyLines = [];
+        if(msg) bodyLines.push(msg);
+        bodyLines.push('');
+        if(name) bodyLines.push(name);
+        if(email) bodyLines.push(email);
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        window.location.href = 'mailto:richyosu@gmail.com?subject=' + subject + '&body=' + body;
+      }
+    };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__revealInit) return;
+    root.__revealInit = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(24px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

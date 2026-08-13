@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,5vw,72px) clamp(24px,4vw,48px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:26px">Skills &amp; Toolkit</div>
+    <h1 data-reveal data-delay="80" style="margin:0;max-width:15em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;color:#211D17;text-wrap:balance">The toolkit behind the evidence.</h1>
+    <p data-reveal data-delay="160" style="margin:28px 0 0;max-width:40em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">From frameworks and field data to analysis and visualization, the methods and tools I use to make monitoring, evaluation and research rigorous, honest and useful.</p>
+  </header>
+
+  <section style="max-width:1260px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(20px,5vw,72px) clamp(20px,3vw,40px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(28px,3vw,44px)">
+
+      <div data-reveal style="border-top:2px solid #211D17;padding-top:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:6px">01</div>
+        <h2 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,2.6vw,30px);color:#211D17;line-height:1.1">Systems &amp; Frameworks</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">MEAL systems strengthening</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">The architecture that captures what programs do, and proves it.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Theory of Change &amp; logframes</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Turning intent into measurable pathways and indicators.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">IPTT &amp; performance tracking</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Keeping targets and results in one honest view.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Data Quality Assessments</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Auditing data until it can be trusted.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Accountability to Affected Populations</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Feedback loops that communities actually use.</div></div>
+        </div>
+      </div>
+
+      <div data-reveal data-delay="90" style="border-top:2px solid #211D17;padding-top:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:6px">02</div>
+        <h2 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,2.6vw,30px);color:#211D17;line-height:1.1">Research &amp; Analysis</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Mixed-methods evaluation</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Pairing the number with the reason behind it.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Qualitative analysis</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">KIIs, FGDs, thematic coding, codebook development.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Quantitative &amp; routine data</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Surveys, administrative datasets, KHIS.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Implementation research</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Digital-health evaluation, testing what works as it scales.</div></div>
+        </div>
+      </div>
+
+      <div data-reveal data-delay="180" style="border-top:2px solid #211D17;padding-top:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:6px">03</div>
+        <h2 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,2.6vw,30px);color:#211D17;line-height:1.1">Learning &amp; Delivery</h2>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Data visualization &amp; storytelling</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Power BI, Looker Studio and Excel that decision-makers read.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Capacity building &amp; training</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Coaching MEAL teams, coaches and field staff.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Donor reporting &amp; compliance</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Meeting the standard, on time, with a clear audit trail.</div></div>
+          <div><div style="font-size:15px;font-weight:600;color:#2A241E">Stakeholder engagement</div><div style="margin-top:4px;font-size:13.5px;line-height:1.5;color:#6A6152">Translating evidence into decisions across partners.</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,90px) clamp(20px,5vw,72px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:clamp(28px,4vw,44px)">Technical toolkit</div>
+    <div style="display:flex;flex-direction:column">
+
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between;padding:24px 0;border-top:1px solid #DDD1BF">
+        <div style="flex:0 0 auto;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.2vw,24px);color:#211D17;min-width:190px">Data Analysis</div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">Advanced Excel</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">SPSS</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">Python</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">R</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">SQL</span>
+        </div>
+      </div>
+
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between;padding:24px 0;border-top:1px solid #DDD1BF">
+        <div style="flex:0 0 auto;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.2vw,24px);color:#211D17;min-width:190px">Data Visualization</div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">Power BI</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">Looker Studio</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">Matplotlib</span>
+        </div>
+      </div>
+
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between;padding:24px 0;border-top:1px solid #DDD1BF">
+        <div style="flex:0 0 auto;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.2vw,24px);color:#211D17;min-width:190px">Digital Data Collection</div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">Kobo Toolbox</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">ODK</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">ONA</span>
+        </div>
+      </div>
+
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between;padding:24px 0;border-top:1px solid #DDD1BF">
+        <div style="flex:0 0 auto;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.2vw,24px);color:#211D17;min-width:190px">Health &amp; Data Systems</div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">KHIS</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">eCHIS</span>
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">CPIMS</span>
+        </div>
+      </div>
+
+      <div data-reveal style="display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between;padding:24px 0;border-top:1px solid #DDD1BF;border-bottom:1px solid #DDD1BF">
+        <div style="flex:0 0 auto;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(19px,2.2vw,24px);color:#211D17;min-width:190px">Spatial Analysis</div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+          <span style="padding:8px 16px;background:#EFE6D5;border-radius:100px;color:#4E463C">QGIS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="max-width:1260px;margin:0 auto;padding:0 clamp(20px,5vw,72px) clamp(56px,8vw,100px)">
+    <div data-reveal style="background:#211D19;border-radius:clamp(20px,3vw,30px);padding:clamp(36px,5vw,64px)">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#E9A15C;margin-bottom:28px">Methods &amp; approaches</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Key-informant interviews</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Focus-group discussions</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Thematic analysis</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Codebook development</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Baseline &amp; endline surveys</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Post-distribution monitoring</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Rapid needs assessments</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Descriptive &amp; comparative statistics</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Trend analysis</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Data-quality audits</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Implementation research</span>
+        <span style="padding:9px 16px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">Cost-effectiveness</span>
+      </div>
+    </div>
+  </section>
+
+  <a href="Writing.html" data-reveal style="display:block;border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
+    <div style="max-width:1260px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:12px">Next</div>
+        <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;color:#211D17">Writing &amp; field notes</div>
+      </div>
+      <div style="font-family:'Newsreader',serif;font-size:clamp(34px,5vw,56px);color:#B85835">→</div>
+    </div>
+  </a>
+
+  <footer style="background:#211D19;color:#EDE4D6;padding:clamp(54px,7vw,96px) clamp(20px,5vw,72px) 38px">
+    <div style="max-width:1260px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">+254 720 663 179<br>+254 739 105 140</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">LinkedIn</div>
+          <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:14.5px;color:#CFC5B6;border-bottom:1px solid #4A433B;transition:color .25s" style-hover="color:#E9A15C">osungu-richard</a>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Location</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">Kenya<br>GMT+3</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
+            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="Work.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Work</a>
+            <a href="About.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
+            <a href="Writing.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Writing</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">
+        <span>© 2026 Richard Osungu</span>
+        <span>MEAL · Research · Data Science</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="440" font-family="Georgia,serif" font-size="170" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="520" font-family="monospace" font-size="26" letter-spacing="10" fill="#8A7F6E" text-anchor="middle">MEAL · RESEARCH · DATA</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__revealInit) return;
+    root.__revealInit = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(24px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

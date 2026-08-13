@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,5vw,72px) clamp(24px,4vw,48px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:26px">Writing &amp; Field Notes</div>
+    <h1 data-reveal data-delay="80" style="margin:0;max-width:15em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;color:#211D17;text-wrap:balance">Notes from the field.</h1>
+    <p data-reveal data-delay="160" style="margin:28px 0 0;max-width:40em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">Short reflections on the craft of monitoring, evaluation and research: methods that worked, lessons that stuck, and what the data kept trying to tell us.</p>
+  </header>
+
+  <main style="max-width:1260px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(20px,5vw,72px) 0">
+
+    <article data-reveal style="border-top:1px solid #DDD1BF;padding-top:clamp(28px,4vw,44px);margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,52px);align-items:center">
+        <div style="flex:1 1 300px;min-width:260px;order:2">
+          <div style="display:flex;gap:14px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#9C4629;margin-bottom:18px">
+            <span style="padding:5px 11px;background:#EDE0CD;border-radius:100px">LATEST</span>
+            <span style="color:#948673">DIGITAL HEALTH · JUN 2026</span>
+          </div>
+          <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(26px,3.6vw,44px);line-height:1.1;letter-spacing:-.02em;color:#211D17;text-wrap:balance"><a href="note-meal-528.html" style="color:inherit;text-decoration:none">Operationalizing a MEAL system across 528 community health units</a></h2>
+          <p style="margin:20px 0 0;max-width:44em;font-size:15.5px;line-height:1.72;color:#4E463C">Standing up monitoring for malaria surveillance at this scale is less about dashboards and more about people: the coaches, peer educators and community health promoters who enter the first number. What we learned building the system across Kakamega and Kisii, from tool design and quality-assurance protocols to the small rituals that keep disaggregated data honest week after week.</p>
+          <div style="margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#948673">6 MIN READ · FIELD NOTE</div>
+          <a href="note-meal-528.html" style="margin-top:22px;display:inline-flex;align-items:center;gap:9px;padding:12px 22px;background:#B85835;color:#F7F1E7;border-radius:100px;font-weight:600;font-size:14px;transition:transform .25s,background .25s" style-hover="background:#9C4629;transform:translateY(-2px)">Read the field note <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
+        </div>
+        <div style="flex:1 1 300px;min-width:260px;order:1">
+          <blockquote style="margin:0;padding:28px 30px;border-left:3px solid #B85835;background:#F8F3EA;border-radius:0 16px 16px 0;font-family:'Newsreader',serif;font-style:italic;font-weight:300;font-size:clamp(20px,2.4vw,28px);line-height:1.35;color:#3A342C;text-wrap:balance">"Less about dashboards, and more about the people who enter the first number."</blockquote>
+        </div>
+      </div>
+    </article>
+
+    <section style="display:flex;flex-direction:column">
+
+      <a href="note-grassroots-to-data.html" data-reveal style="display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,52px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #DDD1BF;color:inherit;transition:padding-left .25s" style-hover="padding-left:8px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B85835;white-space:nowrap">2026</div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:12px">Personal Essay · Leadership</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">From grassroots leadership to data analytics</h3>
+          <p style="margin:14px 0 0;max-width:52em;font-size:14.5px;line-height:1.68;color:#544B40">Organizing sports tournaments and school tours in Nyakach taught me logistics, resource allocation and financial accountability long before I built a data model. On why community mobilization and MEAL were never separate disciplines.</p>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:11px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C">6 MIN READ</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:2px">Read →</span></div>
+        </div>
+      </a>
+
+      <a href="note-healthpulse-echis.html" data-reveal style="display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,52px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #DDD1BF;color:inherit;transition:padding-left .25s" style-hover="padding-left:8px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B85835;white-space:nowrap">2026</div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:12px">Digital Health · Implementation Research</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">Integrating HealthPulse AI into eCHIS: early signals on diagnostic accuracy</h3>
+          <p style="margin:14px 0 0;max-width:52em;font-size:14.5px;line-height:1.68;color:#544B40">When an AI reader sits between a community health promoter and a malaria rapid test, three things change at once: accuracy, confidence, and workflow. A note on designing an evaluation that can separate the signal from the novelty, and what adoption really looks like in the first weeks.</p>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:11px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C">5 MIN READ</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:2px">Read →</span></div>
+        </div>
+      </a>
+
+      <a href="note-accountability.html" data-reveal style="display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,52px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #DDD1BF;color:inherit;transition:padding-left .25s" style-hover="padding-left:8px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B85835;white-space:nowrap">2025</div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:12px">Accountability · MEAL</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">Accountability that communities actually use</h3>
+          <p style="margin:14px 0 0;max-width:52em;font-size:14.5px;line-height:1.68;color:#544B40">Most feedback mechanisms fail quietly: a suggestion box no one opens, a hotline no one answers. Designing AAP that changes programs means closing the loop visibly, so communities see their input move something. What worked across humanitarian interventions, and what I'd never build again.</p>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:11px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C">4 MIN READ</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:2px">Read →</span></div>
+        </div>
+      </a>
+
+      <a href="note-dqa-playbook.html" data-reveal style="display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,52px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #DDD1BF;color:inherit;transition:padding-left .25s" style-hover="padding-left:8px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B85835;white-space:nowrap">2022</div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:12px">Data Quality · Methods</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">A practical DQA playbook: how we cut data discrepancies by 30%</h3>
+          <p style="margin:14px 0 0;max-width:52em;font-size:14.5px;line-height:1.68;color:#544B40">Quarterly data-quality audits sound bureaucratic until you watch them catch a systematic error before it reaches a donor report. The lightweight routine we used on aquaculture-development data: what to sample, what to trace, and how to make the fix stick at source.</p>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:11px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C">5 MIN READ</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:2px">Read →</span></div>
+        </div>
+      </a>
+
+      <a href="note-blue-book.html" data-reveal style="display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,52px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #DDD1BF;border-bottom:1px solid #DDD1BF;color:inherit;transition:padding-left .25s" style-hover="padding-left:8px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B85835;white-space:nowrap">2021</div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:12px">Policy · Research</div>
+          <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.6vw,30px);line-height:1.15;color:#211D17">From a value-chain study to the Blue Book</h3>
+          <p style="margin:14px 0 0;max-width:52em;font-size:14.5px;line-height:1.68;color:#544B40">Evidence rarely walks itself into policy. A reflection on how a national aquaculture value-chain study became a reference document adopted by government: the choices in framing, stakeholder mapping and data accessibility that made it usable rather than shelved.</p>
+          <div style="margin-top:16px;display:flex;align-items:center;gap:11px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9A8E7C">6 MIN READ</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:2px">Read →</span></div>
+        </div>
+      </a>
+
+    </section>
+
+    <div data-reveal style="margin-top:clamp(40px,5vw,64px);padding:clamp(28px,4vw,40px);border:1px dashed #CBBDA8;border-radius:16px;background:#F8F3EA;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(18px,2vw,22px);color:#211D17">More notes in progress.</div>
+        <div style="margin-top:6px;font-size:14px;color:#6A6152;max-width:40em">I write when the field teaches me something worth keeping. Want the next one in your inbox?</div>
+      </div>
+      <a href="mailto:richyosu@gmail.com" style="flex:none;display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:#B85835;color:#F7F1E7;border-radius:100px;font-weight:600;font-size:14.5px;transition:transform .25s,background .25s" style-hover="background:#9C4629;transform:translateY(-2px)">Say hello <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
+    </div>
+
+  </main>
+
+  <a href="Contact.html" data-reveal style="display:block;margin-top:clamp(48px,7vw,90px);border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
+    <div style="max-width:1260px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:12px">Next</div>
+        <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,4vw,48px);letter-spacing:-.02em;color:#211D17">Get in touch</div>
+      </div>
+      <div style="font-family:'Newsreader',serif;font-size:clamp(34px,5vw,56px);color:#B85835">→</div>
+    </div>
+  </a>
+
+  <footer style="background:#211D19;color:#EDE4D6;padding:clamp(54px,7vw,96px) clamp(20px,5vw,72px) 38px">
+    <div style="max-width:1260px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">+254 720 663 179<br>+254 739 105 140</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">LinkedIn</div>
+          <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:14.5px;color:#CFC5B6;border-bottom:1px solid #4A433B;transition:color .25s" style-hover="color:#E9A15C">osungu-richard</a>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Location</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">Kenya<br>GMT+3</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
+            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="Work.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Work</a>
+            <a href="About.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
+            <a href="Skills.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Skills</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">
+        <span>© 2026 Richard Osungu</span>
+        <span>MEAL · Research · Data Science</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="440" font-family="Georgia,serif" font-size="170" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="520" font-family="monospace" font-size="26" letter-spacing="10" fill="#8A7F6E" text-anchor="middle">MEAL · RESEARCH · DATA</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__revealInit) return;
+    root.__revealInit = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(24px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

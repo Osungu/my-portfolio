@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <article style="max-width:720px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,40px) 0">
+    <a href="Writing.html" data-reveal style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:#9C4629;margin-bottom:30px" style-hover="color:#B85835">← Field notes</a>
+    <div data-reveal data-delay="40" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#948673;margin-bottom:20px">MEAL · Accountability · 2025</div>
+    <h1 data-reveal data-delay="90" style="margin:0;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(31px,5vw,54px);line-height:1.08;letter-spacing:-.022em;color:#211D17;text-wrap:balance">Accountability that communities actually use</h1>
+    <p data-reveal data-delay="150" style="margin:24px 0 0;font-family:'Newsreader',serif;font-weight:300;font-style:italic;font-size:clamp(19px,2.4vw,25px);line-height:1.4;color:#6A5A48;text-wrap:pretty">Most feedback mechanisms fail quietly. The ones that work are almost boring, and that is the point.</p>
+    <div data-reveal data-delay="210" style="margin-top:30px;padding:18px 0;border-top:1px solid #DDD1BF;border-bottom:1px solid #DDD1BF;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A7F6E">
+      <span>By Richard Osungu</span>
+      <span>4 min read · Accountability to affected populations</span>
+    </div>
+  </article>
+
+  <article style="max-width:720px;margin:0 auto;padding:clamp(30px,4vw,48px) clamp(20px,5vw,40px) 0;font-size:clamp(16.5px,1.7vw,18.5px);line-height:1.75;color:#37312A">
+
+    <p data-reveal style="margin:0"><span style="float:left;font-family:'Newsreader',serif;font-weight:400;font-size:3.3em;line-height:.78;padding:6px 12px 0 0;color:#B85835">M</span>ost feedback mechanisms do not collapse. They fade. A suggestion box no one opens. A hotline that rings out. A complaints register that fills up and goes nowhere. On paper the mechanism exists; in practice it has quietly taught the community that speaking up is not worth the effort. Working on accountability to affected populations across humanitarian interventions, I have watched this failure mode more than any other.</p>
+
+    <p data-reveal style="margin:22px 0 0">The uncomfortable truth is that a broken feedback channel is worse than none, because it manufactures the appearance of listening while the substance leaks away. And the damage is not only to the relationship. It is to the data, because people who do not trust the channel stop telling you the truth through any of them.</p>
+
+    <h2 data-reveal style="margin:44px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,31px);line-height:1.2;letter-spacing:-.015em;color:#211D17">Built for auditors, not for people</h2>
+    <p data-reveal style="margin:18px 0 0">Feedback systems fail when they are designed to satisfy a donor requirement rather than to serve the person using them. The form is long, the language is technical, the channel is one an outsider chose. It ticks the compliance box and misses the human being entirely. The fix is not more sophistication. It is less friction: a channel people can actually reach, in a form they would actually use.</p>
+
+    <blockquote data-reveal style="margin:40px 0 0;padding:4px 0 4px 26px;border-left:3px solid #B85835;font-family:'Newsreader',serif;font-style:italic;font-weight:300;font-size:clamp(21px,2.8vw,29px);line-height:1.32;color:#2A241E;text-wrap:pretty">A channel people don't trust doesn't just stay silent. It teaches them silence.</blockquote>
+
+    <h2 data-reveal style="margin:44px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,31px);line-height:1.2;letter-spacing:-.015em;color:#211D17">Close the loop, visibly</h2>
+    <p data-reveal style="margin:18px 0 0">The mechanisms that work share one unglamorous feature: the loop closes where people can see it. Someone raises an issue, gets a real acknowledgement, and, crucially, watches something change as a result. That visible movement is the entire mechanism. Without it, you have a mailbox; with it, you have a relationship in which feedback is worth giving because it demonstrably does something.</p>
+
+    <h2 data-reveal style="margin:44px 0 0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(23px,3vw,31px);line-height:1.2;letter-spacing:-.015em;color:#211D17">Trust compounds, and so does honesty</h2>
+    <p data-reveal style="margin:18px 0 0">Once a community sees the loop close a few times, something shifts. Reports get more candid, problems surface earlier, and the quality of everything you monitor improves, because accountability and data quality turn out to be the same discipline viewed from two angles. The thing I would never build again is the elaborate, unanswerable channel. The thing I would build every time is the simple one that keeps its promises.</p>
+
+    <div data-reveal style="margin:40px 0 0;display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px">
+      <span style="padding:6px 13px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">MEAL</span>
+      <span style="padding:6px 13px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Accountability</span>
+      <span style="padding:6px 13px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">AAP</span>
+      <span style="padding:6px 13px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Humanitarian</span>
+    </div>
+
+    <div data-reveal style="margin:36px 0 0;padding-top:26px;border-top:1px solid #DDD1BF;display:flex;align-items:center;gap:16px">
+      <div style="width:46px;height:46px;border-radius:50%;background:#211D19;color:#E9A15C;display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-style:italic;font-size:20px;flex:none">RO</div>
+      <div style="font-size:14px;line-height:1.6;color:#5E554A">Richard Osungu is a MEAL, research and data-science professional based in Kenya, with field experience in humanitarian and community programming.</div>
+    </div>
+  </article>
+
+  <section style="max-width:1080px;margin:0 auto;padding:clamp(44px,6vw,80px) clamp(20px,5vw,40px) 0">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:22px">Continue reading</div>
+    <a href="note-dqa-playbook.html" data-reveal style="display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between;padding:22px 0;border-top:1px solid #DDD1BF;border-bottom:1px solid #DDD1BF;cursor:pointer;transition:padding-left .25s,background .25s" style-hover="padding-left:10px;background:#EEE4D3">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#948673;margin-bottom:8px">Next · Data quality</div>
+        <div style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(20px,2.4vw,27px);color:#211D17;line-height:1.15">A practical DQA playbook: how we cut data discrepancies by 30%</div>
+      </div>
+      <div style="font-family:'Newsreader',serif;font-size:28px;color:#B85835">→</div>
+    </a>
+  </section>
+
+  <footer style="background:#211D19;color:#EDE4D6;margin-top:clamp(48px,7vw,90px);padding:clamp(48px,7vw,84px) clamp(20px,5vw,72px) 36px">
+    <div style="max-width:1260px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(28px,5.5vw,60px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175;border-top:1px solid #3A342E;padding-top:28px">
+        <span>© 2026 Richard Osungu · Kenya</span>
+        <a href="Writing.html" style="color:#CFC5B6" style-hover="color:#E9A15C">← All field notes</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="430" font-family="Georgia,serif" font-size="150" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="510" font-family="monospace" font-size="22" letter-spacing="7" fill="#8A7F6E" text-anchor="middle">FIELD NOTE</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__revealInit) return;
+    root.__revealInit = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){ items.forEach(show); return; }
+    items.forEach(el => {
+      el.style.opacity='0';
+      el.style.transform='translateY(20px)';
+      el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+      const d = el.getAttribute('data-delay');
+      if(d) el.style.transitionDelay = d + 'ms';
+    });
+    const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+    const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.96 && r.bottom > 0; };
+    const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+    requestAnimationFrame(() => requestAnimationFrame(sweep));
+    window.addEventListener('scroll', sweep, { passive: true });
+    document.addEventListener('scroll', sweep, { passive: true, capture: true });
+    setTimeout(() => { items.forEach(show); }, 5000);
+  }
+}
+</script>
+</body>
+</html>

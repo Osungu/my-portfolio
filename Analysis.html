@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  pre{margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+<div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
+
+  <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+
+  <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
+    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+      <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
+    </a>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
+      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Work</a>
+      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Analysis</a>
+      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+    </div>
+  </nav>
+
+  <header style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,5vw,72px) clamp(20px,3vw,40px)">
+    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:26px">Analysis · Python Notebooks</div>
+    <h1 data-reveal data-delay="80" style="margin:0;max-width:15em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;color:#211D17;text-wrap:balance">A working notebook for every method.</h1>
+    <p data-reveal data-delay="160" style="margin:28px 0 0;max-width:42em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">From impact-evaluation econometrics to machine learning and the Python foundations underneath, each notebook is a self-contained, reproducible analysis. Open any one on GitHub to read the code and outputs, or download the <code style="font-family:'IBM Plex Mono',monospace;font-size:.9em;background:#EAE0D0;padding:2px 6px;border-radius:5px">.ipynb</code> to run it yourself.</p>
+
+    <div data-reveal data-delay="220" style="margin-top:clamp(34px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:#DDD1BF;border:1px solid #DDD1BF;border-radius:16px;overflow:hidden">
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,42px);line-height:1;color:#B85835"><span data-count="9">9</span></div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Notebooks</div></div>
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,42px);line-height:1;color:#211D17"><span data-count="40" data-suffix="+">40+</span></div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Charts produced</div></div>
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,42px);line-height:1;color:#211D17"><span data-count="7">7</span></div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Core libraries</div></div>
+      <div style="background:#F8F3EA;padding:20px 22px"><div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,3vw,42px);line-height:1;color:#211D17"><span data-count="4">4</span></div><div style="margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F6E">Method families</div></div>
+    </div>
+  </header>
+
+  <section style="max-width:1260px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,72px)">
+    <a href="Malaria-Analysis.html" data-reveal style="display:block;position:relative;overflow:hidden;background:#211D19;color:#EDE4D6;border-radius:clamp(20px,3vw,28px);transition:transform .3s" style-hover="transform:translateY(-3px)">
+      <div style="display:flex;flex-wrap:wrap">
+        <div style="flex:1 1 360px;min-width:280px;padding:clamp(32px,5vw,60px) clamp(26px,4vw,56px)">
+          <div style="display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#E9A15C;margin-bottom:22px">
+            <span style="padding:5px 11px;background:rgba(233,161,92,.14);border-radius:100px">Flagship</span>
+            <span style="color:#9A8E7C">Applied surveillance</span>
+          </div>
+          <h2 style="margin:0;max-width:16em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(26px,3.6vw,44px);line-height:1.12;letter-spacing:-.02em;color:#F4ECDD;text-wrap:balance">Kakamega CCMm malaria surveillance pipeline</h2>
+          <p style="margin:20px 0 0;max-width:40em;font-size:15px;line-height:1.7;color:#B9AE9E">The real-world notebook behind the malaria project: one Excel export in, and a full evidence pack out: headline rates, population-adjusted incidence, hotspot detection and a named community-health-unit supervision shortlist across 528 units.</p>
+          <div style="margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px">
+            <span style="padding:7px 13px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">pandas</span>
+            <span style="padding:7px 13px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">NumPy</span>
+            <span style="padding:7px 13px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">matplotlib</span>
+            <span style="padding:7px 13px;border:1px solid #4A433B;border-radius:100px;color:#D8CEBE">openpyxl</span>
+          </div>
+          <div style="margin-top:30px;display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:#F2E9DA">Read the full case study <span style="font-family:'IBM Plex Mono',monospace;color:#E9A15C">→</span></div>
+        </div>
+        <div style="flex:1 1 300px;min-width:260px;display:flex;align-items:stretch">
+          <div style="width:100%;background:#FBF7EF;display:flex;align-items:center;justify-content:center;padding:22px">
+            <img src="assets/img/malaria-heatmap.png" alt="Malaria positivity heatmap by sub-county and month" style="display:block;max-width:100%;max-height:340px;object-fit:contain;border-radius:8px">
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <main style="max-width:1260px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+
+    <section style="padding:clamp(30px,4vw,52px) 0 0">
+      <div data-reveal style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #DDD1BF;padding-top:clamp(26px,3vw,38px);margin-bottom:clamp(24px,3vw,36px)">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835">A</div>
+        <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(24px,3vw,38px);letter-spacing:-.02em;color:#211D17;line-height:1.1">Impact evaluation &amp; causal inference</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,24px)">
+
+        <article data-reveal style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#FBF7EF;border-bottom:1px solid #E4DACB;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="assets/img/nb/did.png" alt="Difference-in-differences plot of intervention vs control" style="max-width:100%;max-height:100%;object-fit:contain">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Quasi-experimental design</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Difference-in-Differences</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Estimating programme impact by comparing intervention and control groups before and after, the workhorse design when randomisation isn't possible. Isolates a treatment effect of 0.6 against the modelled counterfactual.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">pandas</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">NumPy</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">matplotlib</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/difference-in-differences.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/difference-in-differences.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal data-delay="90" style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#FBF7EF;border-bottom:1px solid #E4DACB;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="assets/img/nb/linreg.png" alt="Pairplot of HIV viral-load dataset" style="max-width:100%;max-height:100%;object-fit:contain">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Regression modelling</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Linear Regression</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Modelling viral-load suppression among people living with HIV against treatment adherence, years under care and age, with formal assumption checks (Shapiro–Wilk normality, residual diagnostics) in statsmodels.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">statsmodels</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">SciPy</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">seaborn</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/linear-regression.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/linear-regression.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal data-delay="180" style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#1B1815;border-bottom:1px solid #322C26;display:flex;align-items:center;padding:20px 22px">
+            <pre style="font-size:12px;line-height:1.6;color:#CFC5B4;white-space:pre-wrap"><span style="color:#D98A5B">from</span> scipy <span style="color:#D98A5B">import</span> stats
+
+<span style="color:#7E8F73;font-style:italic"># Paired t-test: before vs after</span>
+t, p = stats.ttest_rel(before, after)
+<span style="color:#D98A5B">print</span>(<span style="color:#CDAF77">"t ="</span>, round(t, <span style="color:#E4926B">3</span>),
+      <span style="color:#CDAF77">" p ="</span>, round(p, <span style="color:#E4926B">4</span>))</pre>
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Hypothesis testing</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Central Tendency &amp; T-Tests</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Descriptive statistics and the inferential backbone of evaluation: one-sample, two-sample and paired t-tests with SciPy, for judging whether a difference in group means is real or noise.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">pandas</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">SciPy</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/central-tendency-t-tests.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/central-tendency-t-tests.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section style="padding:clamp(38px,5vw,64px) 0 0">
+      <div data-reveal style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #DDD1BF;padding-top:clamp(26px,3vw,38px);margin-bottom:clamp(24px,3vw,36px)">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835">B</div>
+        <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(24px,3vw,38px);letter-spacing:-.02em;color:#211D17;line-height:1.1">Machine learning &amp; pattern discovery</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,24px)">
+
+        <article data-reveal style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#FBF7EF;border-bottom:1px solid #E4DACB;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="assets/img/nb/pca.png" alt="PCA projection coloured by lessons attended" style="max-width:100%;max-height:100%;object-fit:contain">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Dimensionality reduction</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Principal Component Analysis</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Compressing correlated survey items into a few interpretable components: z-score standardisation, then projecting onto principal axes to reveal a confidence-vs-motivation structure that tracks lessons attended.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">scikit-learn</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">seaborn</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/principal-component-analysis.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/principal-component-analysis.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal data-delay="90" style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#FBF7EF;border-bottom:1px solid #E4DACB;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="assets/img/nb/kmeans.png" alt="K-means clusters of respondents by skill" style="max-width:100%;max-height:100%;object-fit:contain">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Unsupervised segmentation</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">K-Means Clustering</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Segmenting respondents by decision-making and interpersonal skills, using the elbow method to choose the number of clusters, then profiling each group to make the segments actionable.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">scikit-learn</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">seaborn</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/k-means-clustering.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/k-means-clustering.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section style="padding:clamp(38px,5vw,64px) 0 0">
+      <div data-reveal style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-top:1px solid #DDD1BF;padding-top:clamp(26px,3vw,38px);margin-bottom:clamp(24px,3vw,36px)">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B85835">C</div>
+        <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(24px,3vw,38px);letter-spacing:-.02em;color:#211D17;line-height:1.1">Foundations &amp; communication</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(16px,2vw,24px)">
+
+        <article data-reveal style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#FBF7EF;border-bottom:1px solid #E4DACB;display:flex;align-items:center;justify-content:center;padding:16px">
+            <img src="assets/img/nb/dataviz.png" alt="Stem plot of diarrhea cases in a community unit" style="max-width:100%;max-height:100%;object-fit:contain">
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Visual grammar</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Data Visualization</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Choosing the right chart for the question: pies, histograms, stem and multi-panel plots in matplotlib and seaborn, applied to community-health data like this diarrhea-case surveillance series.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">matplotlib</span>
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">seaborn</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/data-visualization.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/data-visualization.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal data-delay="90" style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#1B1815;border-bottom:1px solid #322C26;display:flex;align-items:center;padding:20px 22px">
+            <pre style="font-size:12px;line-height:1.6;color:#CFC5B4;white-space:pre-wrap"><span style="color:#D98A5B">for</span> chu <span style="color:#D98A5B">in</span> units:
+    <span style="color:#D98A5B">if</span> chu.tested == <span style="color:#E4926B">0</span>:
+        flag(chu, <span style="color:#CDAF77">"silent"</span>)
+    <span style="color:#D98A5B">elif</span> chu.tpr > threshold:
+        flag(chu, <span style="color:#CDAF77">"hotspot"</span>)</pre>
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Program logic</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Control Statements</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Conditional logic and loops, the decision flow that powers data-cleaning rules and the validation checks that flag silent or hotspot community units.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">Python</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/control-statements.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/control-statements.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article data-reveal data-delay="180" style="display:flex;flex-direction:column;background:#F8F3EA;border:1px solid #DDD1BF;border-radius:18px;overflow:hidden">
+          <div style="aspect-ratio:16/10;background:#1B1815;border-bottom:1px solid #322C26;display:flex;align-items:center;padding:20px 22px">
+            <pre style="font-size:12px;line-height:1.6;color:#CFC5B4;white-space:pre-wrap"><span style="color:#D98A5B">def</span> positivity(pos, tested):
+    <span style="color:#7E8F73;font-style:italic"># TPR, safe for zero</span>
+    <span style="color:#D98A5B">return</span> pos / tested * <span style="color:#E4926B">100</span> \
+        <span style="color:#D98A5B">if</span> tested <span style="color:#D98A5B">else</span> <span style="color:#E4926B">0.0</span></pre>
+          </div>
+          <div style="padding:24px 24px 26px;display:flex;flex-direction:column;flex:1">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9C4629;margin-bottom:12px">Reproducibility</div>
+            <h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(21px,2.4vw,27px);line-height:1.14;color:#211D17">Functions</h3>
+            <p style="margin:12px 0 0;font-size:14px;line-height:1.62;color:#544B40;flex:1">Reusable, documented functions, the habit that turns a one-off script into an auditable pipeline, so the same indicator is computed the same way every month.</p>
+            <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px">
+              <span style="padding:5px 11px;background:#EFE6D5;border-radius:100px;color:#6A6152">Python</span>
+            </div>
+            <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding-top:18px;border-top:1px solid #E4DACB">
+              <a href="assets/nb/functions.ipynb" download style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
+              <a href="https://github.com/Osungu/my-portfolio/blob/main/assets/nb/functions.ipynb" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6A6152;transition:color .25s" style-hover="color:#9C4629">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <div data-reveal style="margin-top:clamp(40px,5vw,64px);padding:clamp(28px,4vw,40px);border:1px dashed #CBBDA8;border-radius:16px;background:#F8F3EA;display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(18px,2vw,22px);color:#211D17">Every notebook runs top-to-bottom.</div>
+        <div style="margin-top:6px;font-size:14px;color:#6A6152;max-width:44em">Prefer to read rather than run? Each one renders in full (code, charts and output) straight on GitHub. Want to talk through the methods?</div>
+      </div>
+      <a href="Contact.html" style="flex:none;display:inline-flex;align-items:center;gap:9px;padding:13px 24px;background:#B85835;color:#F7F1E7;border-radius:100px;font-weight:600;font-size:14.5px;transition:transform .25s,background .25s" style-hover="background:#9C4629;transform:translateY(-2px)">Get in touch <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
+    </div>
+
+  </main>
+
+  <footer style="background:#211D19;color:#EDE4D6;margin-top:clamp(48px,7vw,100px);padding:clamp(54px,7vw,96px) clamp(20px,5vw,72px) 38px">
+    <div style="max-width:1260px;margin:0 auto">
+      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">+254 720 663 179<br>+254 739 105 140</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">LinkedIn</div>
+          <a href="https://linkedin.com/in/osungu-richard" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:14.5px;color:#CFC5B6;border-bottom:1px solid #4A433B;transition:color .25s" style-hover="color:#E9A15C">osungu-richard</a>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Location</div>
+          <div style="margin-top:10px;font-size:14.5px;line-height:1.7;color:#CFC5B6">Kenya<br>GMT+3</div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
+            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="Work.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Work</a>
+            <a href="About.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
+            <a href="Writing.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Writing</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:46px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8B8175">
+        <span>© 2026 Richard Osungu</span>
+        <span>MEAL · Research · Data Science</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="430" font-family="Georgia,serif" font-size="150" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="510" font-family="monospace" font-size="24" letter-spacing="8" fill="#8A7F6E" text-anchor="middle">ANALYSIS · NOTEBOOKS</text></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rootRef = React.createRef();
+  }
+  renderVals(){
+    return { root: this.rootRef };
+  }
+  componentDidMount(){
+    const root = this.rootRef.current;
+    if(!root || root.__initDone) return;
+    root.__initDone = true;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Reveal
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    const show = (el) => { el.style.transition='none'; el.style.opacity='1'; el.style.transform='none'; };
+    if(reduce){
+      items.forEach(show);
+    } else {
+      items.forEach(el => {
+        el.style.opacity='0';
+        el.style.transform='translateY(24px)';
+        el.style.transition='opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
+        const d = el.getAttribute('data-delay');
+        if(d) el.style.transitionDelay = d + 'ms';
+      });
+      const reveal = (el) => { el.style.opacity='1'; el.style.transform='none'; };
+      const inView = (el) => { const r = el.getBoundingClientRect(); return r.top < (window.innerHeight||800) * 0.94 && r.bottom > 0; };
+      const sweep = () => { for(const el of items){ if(inView(el)) reveal(el); } };
+      requestAnimationFrame(() => requestAnimationFrame(sweep));
+      window.addEventListener('scroll', sweep, { passive: true });
+      document.addEventListener('scroll', sweep, { passive: true, capture: true });
+      setTimeout(() => { items.forEach(show); }, 5000);
+    }
+
+    // Counters
+    const nums = Array.from(root.querySelectorAll('[data-count]'));
+    const runCount = (el) => {
+      const target = parseFloat(el.getAttribute('data-count'));
+      const suffix = el.getAttribute('data-suffix') || '';
+      const dur = 1500;
+      const start = performance.now();
+      const step = (now) => {
+        const t = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = Math.round(target * eased).toLocaleString() + suffix;
+        if(t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const done = new WeakSet();
+    const fire = () => { for(const el of nums){ if(done.has(el)) continue; const r = el.getBoundingClientRect(); if(r.top < (window.innerHeight||800)*0.9 && r.bottom > 0){ done.add(el); runCount(el); } } };
+    if(reduce){
+      nums.forEach(el => { el.textContent = parseFloat(el.getAttribute('data-count')).toLocaleString() + (el.getAttribute('data-suffix')||''); });
+    } else {
+      requestAnimationFrame(fire);
+      window.addEventListener('scroll', fire, { passive: true });
+      document.addEventListener('scroll', fire, { passive: true, capture: true });
+      setTimeout(() => { for(const el of nums){ if(!done.has(el)){ done.add(el); runCount(el); } } }, 4000);
+    }
+  }
+}
+</script>
+</body>
+</html>
