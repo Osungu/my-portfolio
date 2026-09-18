@@ -1,0 +1,13 @@
+*{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  a{color:#9C4629;text-decoration:none}
+  a:hover{color:#B85835}
+  input,textarea{font-family:inherit}
+  input::placeholder,textarea::placeholder{color:#A79B89}
+  @keyframes barPulse{0%,100%{transform:scaleY(.32)}50%{transform:scaleY(1)}}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(76,122,75,.5)}70%{box-shadow:0 0 0 9px rgba(76,122,75,0)}100%{box-shadow:0 0 0 0 rgba(76,122,75,0)}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}

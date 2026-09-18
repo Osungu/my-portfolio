@@ -1,0 +1,11 @@
+*{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:#B85835;color:#F7F1E7}
+  a{color:#9C4629;text-decoration:none}
+  a:hover{color:#B85835}
+  pre{margin:0;font-family:'IBM Plex Mono',ui-monospace,monospace}
+  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
