@@ -1,54 +1,41 @@
-# Richard Osungu — MEAL, Research & Data Science
+# Richard Osungu — editable portfolio
 
-Personal portfolio of Richard Osungu, a Monitoring, Evaluation, Accountability and Learning (MEAL) and Research professional based in Kenya, with 7+ years across malaria, mental health, disability inclusion and livelihoods programs.
+This is the unpacked version of your supplied portfolio. The page content, layout,
+fonts, images, animations, links, CV and notebooks are preserved. No build step is required.
 
-**Live site:** https://osungu.github.io/my-portfolio/
+## Edit text
+Open the corresponding `.dc.html` file in a text editor and search for the sentence
+you want to change. Text is now readable HTML, not an encoded bundle.
+`index.html` is the landing page; `Home.dc.html` is the same homepage at its existing URL.
+Keep those two files in sync when changing the homepage.
 
----
+## Edit images
+Images are ordinary files in `assets/images/`. Find the `<img>` or `<image-slot>` in
+the page and change its `src` to the replacement image path. Keep its dimensions,
+style and crop settings to preserve the layout. Update `alt` text as appropriate.
+`asset-map.json` records each original embedded asset and its extracted location.
 
-## About
+## Design and behavior
+Shared fonts and page styles live in `assets/css/`; fonts are in `assets/fonts/`.
+The original inline styles are retained next to their elements for fidelity.
+Page interactions are readable in the `text/x-dc` script at the bottom of each page.
+`assets/vendor/` holds the original rendering libraries (including React and the
+Claude DC runtime). Keep those libraries and their license comments intact.
+`assets/js/` maps runtime dependencies to local files. No CDN is needed for those.
+The small inline SVG textures are deliberately retained.
 
-This site brings together my applied work, implementation research, and reproducible data analysis. It is built as a static site and hosted on GitHub Pages, so every page is a single self-contained file that loads offline.
+## Preview
+Serve this folder with a local web server, for example `python -m http.server 8000`,
+then visit http://localhost:8000/. A web server is recommended because the original
+runtime uses browser loading features. No dependency installation or build is needed.
 
-## What's inside
+## GitHub Pages
+These files can replace the existing published site files after review. Preserve
+this folder structure and all `.dc.html` filenames so existing links keep working.
+The published site uses these unpacked files.
 
-- **Home** — overview and featured research and work
-- **Work** — selected programs (Global Fund malaria surveillance, aquaculture value-chain Blue Book, disability inclusion)
-- **Analysis** — nine reproducible Python notebooks, from malaria surveillance to causal inference and machine learning
-- **About** — bio, experience timeline, education and certifications
-- **Community** — early community organising and youth mobilisation in Nyakach
-- **Writing** — field notes on MEAL, data quality, and research practice
-- **Skills** — competencies and toolkit
-- **Contact** — how to get in touch
+## Next phase: visual editor
+An editor has not been added yet. These readable pages and separate images provide
+a foundation for one. A future editor should save content through an authenticated
+workflow rather than placing GitHub credentials in public website code.
 
-## Analysis notebooks
-
-The `assets/nb/` folder holds the Jupyter notebooks featured in the Analysis section:
-
-- Kakamega CCMm malaria surveillance pipeline (`assets/analyze_kakamega.ipynb`)
-- Difference-in-Differences
-- Linear Regression
-- Central Tendency & T-Tests
-- Principal Component Analysis
-- K-Means Clustering
-- Data Visualization
-- Control Statements
-- Functions
-
-Each notebook runs top to bottom and renders in full (code, charts and output) directly on GitHub.
-
-## Tech
-
-- Static HTML, no build step required
-- Hosted on GitHub Pages
-- Fonts: Newsreader, Hanken Grotesk, IBM Plex Mono
-
-## Contact
-
-- Email: richyosu@gmail.com
-- LinkedIn: [osungu-richard](https://linkedin.com/in/osungu-richard)
-- Location: Kenya
-
----
-
-© 2026 Richard Osungu

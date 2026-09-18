@@ -1,0 +1,102 @@
+{
+  "pages": [
+    {
+      "page": "About.dc.html",
+      "bundled_bytes": 1559859,
+      "editable_bytes": 27592,
+      "assets": 25
+    },
+    {
+      "page": "Analysis.dc.html",
+      "bundled_bytes": 1632020,
+      "editable_bytes": 39186,
+      "assets": 29
+    },
+    {
+      "page": "Community.dc.html",
+      "bundled_bytes": 5428310,
+      "editable_bytes": 59637,
+      "assets": 57
+    },
+    {
+      "page": "Contact.dc.html",
+      "bundled_bytes": 1047788,
+      "editable_bytes": 15565,
+      "assets": 23
+    },
+    {
+      "page": "Home.dc.html",
+      "bundled_bytes": 1658206,
+      "editable_bytes": 32615,
+      "assets": 26
+    },
+    {
+      "page": "Malaria-Analysis.dc.html",
+      "bundled_bytes": 1441065,
+      "editable_bytes": 33423,
+      "assets": 26
+    },
+    {
+      "page": "Skills.dc.html",
+      "bundled_bytes": 1053888,
+      "editable_bytes": 21469,
+      "assets": 23
+    },
+    {
+      "page": "Work.dc.html",
+      "bundled_bytes": 1538900,
+      "editable_bytes": 36929,
+      "assets": 28
+    },
+    {
+      "page": "Writing.dc.html",
+      "bundled_bytes": 1067063,
+      "editable_bytes": 20955,
+      "assets": 24
+    },
+    {
+      "page": "index.html",
+      "bundled_bytes": 1658206,
+      "editable_bytes": 32615,
+      "assets": 26
+    },
+    {
+      "page": "note-accountability.dc.html",
+      "bundled_bytes": 1045026,
+      "editable_bytes": 13386,
+      "assets": 23
+    },
+    {
+      "page": "note-blue-book.dc.html",
+      "bundled_bytes": 1045567,
+      "editable_bytes": 13906,
+      "assets": 23
+    },
+    {
+      "page": "note-dqa-playbook.dc.html",
+      "bundled_bytes": 1045531,
+      "editable_bytes": 13870,
+      "assets": 23
+    },
+    {
+      "page": "note-grassroots-to-data.dc.html",
+      "bundled_bytes": 1054629,
+      "editable_bytes": 22705,
+      "assets": 23
+    },
+    {
+      "page": "note-healthpulse-echis.dc.html",
+      "bundled_bytes": 1046122,
+      "editable_bytes": 14453,
+      "assets": 23
+    },
+    {
+      "page": "note-meal-528.dc.html",
+      "bundled_bytes": 1151816,
+      "editable_bytes": 16582,
+      "assets": 24
+    }
+  ],
+  "unique_assets": 67,
+  "stylesheets": 8
+}
