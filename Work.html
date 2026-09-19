@@ -1,60 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
+<script src="assets/js/resources-15ef50f1.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<script src="assets/vendor/dc-runtime-8fe7df74.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,300..500&display=swap" rel="stylesheet">
-<script src="image-slot.js"></script>
-<style>
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:#F4EEE4;color:#23201C;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  ::selection{background:#B85835;color:#F7F1E7}
-  @keyframes barPulse{0%,100%{transform:scaleY(.32)}50%{transform:scaleY(1)}}
-  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-  @keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(76,122,75,.5)}70%{box-shadow:0 0 0 9px rgba(76,122,75,0)}100%{box-shadow:0 0 0 0 rgba(76,122,75,0)}}
-  @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="assets/css/fonts-7d079a26.css">
+<script src="assets/vendor/image-slot-9309434c.js"></script>
+<link rel="stylesheet" href="assets/css/work-styles-6a4f5e0d.css">
 </helmet>
 <div ref="{{ root }}" style="position:relative;overflow-x:hidden;min-height:100vh">
 
   <div style="position:fixed;top:0;left:0;height:3px;width:100%;background:#B85835;transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:growX linear;animation-timeline:scroll(root)"></div>
-  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:110;opacity:.05;mix-blend-mode:multiply;background:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22140%22 height=%22140%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 sc-camel-base-frequency=%220.85%22 sc-camel-num-octaves=%222%22 sc-camel-stitch-tiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E')"></div>
 
   <nav style="position:sticky;top:0;z-index:80;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px;padding:16px clamp(20px,5vw,72px);background:rgba(244,238,228,.95);border-bottom:1px solid #E4DACB">
-    <a href="Home.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
+    <a href="Home.dc.html" style="display:flex;flex-direction:column;line-height:1;color:#23201C">
       <span style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;letter-spacing:-.015em">Richard Osungu</span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#8A7F6E;margin-top:6px">MEAL · Research · Data</span>
     </a>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:12.5px">
-      <a href="Work.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Work</a>
-      <a href="Analysis.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
-      <a href="About.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
-      <a href="Community.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
-      <a href="Writing.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
-      <a href="Skills.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
-      <a href="Contact.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
+      <a href="Work.dc.html" style="padding:9px 15px;border-radius:100px;color:#9C4629;background:#EDE0CD">Work</a>
+      <a href="Analysis.dc.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Analysis</a>
+      <a href="About.dc.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">About</a>
+      <a href="Community.dc.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Community</a>
+      <a href="Writing.dc.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Writing</a>
+      <a href="Skills.dc.html" style="padding:9px 15px;border-radius:100px;color:#3A342C;transition:background .25s" style-hover="background:#EBE1D1">Skills</a>
+      <a href="Contact.dc.html" style="margin-left:8px;padding:9px 19px;border:1px solid #2A241E;border-radius:100px;color:#2A241E;transition:all .25s" style-hover="background:#2A241E;color:#F4EEE4">Contact</a>
     </div>
   </nav>
 
   <header style="max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(20px,5vw,72px) clamp(20px,4vw,48px)">
-    <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:26px">Selected Work · 2016–2026</div>
-    <h1 data-reveal data-delay="80" style="margin:0;max-width:16em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;color:#211D17;text-wrap:balance">Evidence, generated in the field.</h1>
-    <p data-reveal data-delay="160" style="margin:28px 0 0;max-width:40em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">A selection of research studies, evaluations and programs where I led the design of the questions, the data, and the answers, from AI-assisted malaria diagnosis to national aquaculture policy.</p>
+    <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#9A5A38;margin-bottom:26px">Selected Work · 2016–2026</div>
+    <h1 data-reveal="" data-delay="80" style="margin:0;max-width:16em;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(38px,6vw,76px);line-height:1.04;letter-spacing:-.025em;color:#211D17;text-wrap:balance">Evidence, generated in the field.</h1>
+    <p data-reveal="" data-delay="160" style="margin:28px 0 0;max-width:40em;font-size:clamp(16px,1.5vw,18px);line-height:1.66;color:#544B40">A selection of research studies, evaluations and programs where I led the design of the questions, the data, and the answers, from AI-assisted malaria diagnosis to national aquaculture policy.</p>
   </header>
 
   <main style="max-width:1260px;margin:0 auto;padding:clamp(20px,3vw,40px) clamp(20px,5vw,72px) 0">
 
-    <article data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+    <article data-reveal="" style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
       <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
         <aside style="flex:0 1 250px;min-width:210px">
           <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">01</div>
@@ -87,29 +76,29 @@
           <div style="margin-top:30px;display:flex;flex-direction:column;gap:16px">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#948673">Selected outputs · Kakamega malaria surveillance</div>
             <figure style="margin:0;border-radius:16px;overflow:hidden;border:1px solid #E0D5C4;background:#FBF7EF">
-              <img src="assets/img/malaria-trend.png" alt="Monthly test positivity vs testing rate, Apr 2025 to May 2026" style="display:block;width:100%;height:auto">
+              <img src="assets/images/monthly-test-positivity-vs-testing-rate-23d2031f.png" alt="Monthly test positivity vs testing rate, Apr 2025 to May 2026" style="display:block;width:100%;height:auto">
               <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Monthly test positivity vs testing rate · 14-month trend</figcaption>
             </figure>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
               <figure style="margin:0;border-radius:16px;overflow:hidden;border:1px solid #E0D5C4;background:#FBF7EF">
-                <img src="assets/img/malaria-subcounty.png" alt="Test positivity rate by sub-county" style="display:block;width:100%;height:auto">
+                <img src="assets/images/test-positivity-rate-by-sub-county-2faff895.png" alt="Test positivity rate by sub-county" style="display:block;width:100%;height:auto">
                 <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Positivity by sub-county · vs county average</figcaption>
               </figure>
               <figure style="margin:0;border-radius:16px;overflow:hidden;border:1px solid #E0D5C4;background:#FBF7EF">
-                <img src="assets/img/malaria-heatmap.png" alt="Test positivity percent by sub-county and month" style="display:block;width:100%;height:auto">
+                <img src="assets/images/malaria-positivity-heatmap-by-sub-county-and-month-9111e887.png" alt="Test positivity percent by sub-county and month" style="display:block;width:100%;height:auto">
                 <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Positivity heatmap · sub-county × month</figcaption>
               </figure>
             </div>
           </div>
           <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center">
-            <a href="Malaria-Analysis.html" style="display:inline-flex;align-items:center;gap:9px;padding:13px 22px;background:#211D19;color:#F2E9DA;border-radius:100px;font-weight:600;font-size:14px;transition:transform .25s,background .25s" style-hover="background:#2E2822;transform:translateY(-2px)">Read the analysis notebook <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
+            <a href="Malaria-Analysis.dc.html" style="display:inline-flex;align-items:center;gap:9px;padding:13px 22px;background:#211D19;color:#F2E9DA;border-radius:100px;font-weight:600;font-size:14px;transition:transform .25s,background .25s" style-hover="background:#2E2822;transform:translateY(-2px)">Read the analysis notebook <span style="font-family:'IBM Plex Mono',monospace">→</span></a>
             <a href="assets/analyze_kakamega.ipynb" download="analyze_kakamega.ipynb" style="display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Download .ipynb ↓</a>
           </div>
         </div>
       </div>
     </article>
 
-    <article data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+    <article data-reveal="" style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
       <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
         <aside style="flex:0 1 250px;min-width:210px">
           <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">02</div>
@@ -140,13 +129,13 @@
             <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Research</span>
           </div>
           <div style="margin-top:24px">
-            <a href="note-healthpulse-echis.html" style="display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Read the research note →</a>
+            <a href="note-healthpulse-echis.dc.html" style="display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#9C4629;border-bottom:1px solid #D8B7A6;padding-bottom:3px;transition:border-color .25s" style-hover="border-color:#9C4629">Read the research note →</a>
           </div>
         </div>
       </div>
     </article>
 
-    <article data-reveal style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+    <article data-reveal="" style="border-top:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
       <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
         <aside style="flex:0 1 250px;min-width:210px">
           <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">03</div>
@@ -180,7 +169,7 @@
       </div>
     </article>
 
-    <article data-reveal style="border-top:1px solid #DDD1BF;border-bottom:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
+    <article data-reveal="" style="border-top:1px solid #DDD1BF;border-bottom:1px solid #DDD1BF;padding:clamp(38px,6vw,76px) 0">
       <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,64px)">
         <aside style="flex:0 1 250px;min-width:210px">
           <div style="font-family:'Newsreader',serif;font-weight:300;font-size:clamp(48px,6vw,80px);line-height:1;color:#B85835">04</div>
@@ -207,42 +196,19 @@
             <span style="padding:6px 12px;border:1px solid #DDD1BF;border-radius:100px;color:#6A6152">Access</span>
           </div>
           <figure style="margin:30px 0 0;border:1px solid #E0D5C4;border-radius:16px;overflow:hidden;background:#F8F3EA">
-            <img src="assets/img/comm/mobility-walking-aids.jpeg" alt="Recipients and partners standing with newly distributed walking frames" loading="lazy" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover">
-            <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Handover of walking aids with partners and recipients, Kisumu County</figcaption>
+            <img src="assets/images/kisumu-county-deputy-governor-dr-mathews-ochieng-owili-disability-advisor-caroline-ag-bf73906b.jpg" alt="Kisumu County Deputy Governor Dr Mathews Ochieng Owili, Disability Advisor Caroline Agwanda and the County Director of Health delivering walking aids" loading="lazy" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover">
+            <figcaption style="padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8A7F6E;border-top:1px solid #EADFCE">Deputy Governor Kisumu County, Dr Mathews Ochieng' Owili, Disability Advisor to the Governor, Caroline Agwanda, and the County Director of Health delivering walking aids</figcaption>
           </figure>
         </div>
       </div>
     </article>
 
     <section style="padding:clamp(48px,7vw,88px) 0">
-      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#A2937E;margin-bottom:32px">Also delivered</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(16px,2vw,24px)">
-        <div data-reveal style="border:1px solid #DDD1BF;border-radius:16px;padding:26px;background:#F8F3EA">
-          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:40px;line-height:1;color:#211D17">10</div>
-          <div style="margin-top:12px;font-size:14px;line-height:1.5;color:#5E554A">Market-research reports integrating qualitative &amp; quantitative insight</div>
-          <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#9A8E7C;text-transform:uppercase">Belfast Millers</div>
-        </div>
-        <div data-reveal data-delay="80" style="border:1px solid #DDD1BF;border-radius:16px;padding:26px;background:#F8F3EA">
-          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:40px;line-height:1;color:#211D17">5</div>
-          <div style="margin-top:12px;font-size:14px;line-height:1.5;color:#5E554A">Lessons-learned &amp; best-practice briefs disseminated to stakeholders</div>
-          <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#9A8E7C;text-transform:uppercase">Secours Islamique France</div>
-        </div>
-        <div data-reveal data-delay="160" style="border:1px solid #DDD1BF;border-radius:16px;padding:26px;background:#F8F3EA">
-          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:40px;line-height:1;color:#211D17">15</div>
-          <div style="margin-top:12px;font-size:14px;line-height:1.5;color:#5E554A">Capacity-building sessions on MEL standards &amp; donor compliance</div>
-          <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#9A8E7C;text-transform:uppercase">Practical Action Kenya</div>
-        </div>
-        <div data-reveal data-delay="240" style="border:1px solid #DDD1BF;border-radius:16px;padding:26px;background:#F8F3EA">
-          <div style="font-family:'Newsreader',serif;font-weight:300;font-size:40px;line-height:1;color:#211D17">3</div>
-          <div style="margin-top:12px;font-size:14px;line-height:1.5;color:#5E554A">Aquaculture case studies documenting farmer technology adoption</div>
-          <div style="margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#9A8E7C;text-transform:uppercase">State Dept. for the Blue Economy</div>
-        </div>
-      </div>
     </section>
 
   </main>
 
-  <a href="About.html" data-reveal style="display:block;border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
+  <a href="About.dc.html" data-reveal="" style="display:block;border-top:1px solid #DDD1BF;background:#F4EEE4;transition:background .3s" style-hover="background:#EEE4D3">
     <div style="max-width:1260px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
       <div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#A2937E;margin-bottom:12px">Next</div>
@@ -254,8 +220,8 @@
 
   <footer style="background:#211D19;color:#EDE4D6;padding:clamp(54px,7vw,96px) clamp(20px,5vw,72px) 38px">
     <div style="max-width:1260px;margin:0 auto">
-      <div data-reveal style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
-      <a href="mailto:richyosu@gmail.com" data-reveal data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
+      <div data-reveal="" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:#B85835">Get in touch</div>
+      <a href="mailto:richyosu@gmail.com" data-reveal="" data-delay="80" style="display:inline-block;margin-top:22px;color:#F4ECDD;font-family:'Newsreader',serif;font-weight:300;font-size:clamp(30px,6vw,68px);letter-spacing:-.02em;line-height:1.04;transition:color .25s" style-hover="color:#E9A15C">richyosu@gmail.com</a>
       <div style="margin-top:52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;border-top:1px solid #3A342E;padding-top:34px">
         <div>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Phone</div>
@@ -272,10 +238,10 @@
         <div>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8B8175">Explore</div>
           <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;font-size:14.5px">
-            <a href="Home.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
-            <a href="About.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
-            <a href="Writing.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Writing</a>
-            <a href="Skills.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Skills</a>
+            <a href="Home.dc.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Home</a>
+            <a href="About.dc.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">About</a>
+            <a href="Writing.dc.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Writing</a>
+            <a href="Skills.dc.html" style="color:#CFC5B6;transition:color .2s" style-hover="color:#E9A15C">Skills</a>
           </div>
         </div>
       </div>
@@ -288,8 +254,8 @@
 
 </div>
 </x-dc>
-<template id="__bundler_thumbnail" data-bg-color="#F4EEE4"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#F4EEE4"/><text x="600" y="440" font-family="Georgia,serif" font-size="170" fill="#B85835" text-anchor="middle" font-style="italic">RO</text><text x="600" y="520" font-family="monospace" font-size="26" letter-spacing="10" fill="#8A7F6E" text-anchor="middle">MEAL · RESEARCH · DATA</text></svg></template>
-<script type="text/x-dc" data-dc-script>
+
+<script type="text/x-dc" data-dc-script="">
 class Component extends DCLogic {
   constructor(props){
     super(props);
@@ -323,5 +289,6 @@ class Component extends DCLogic {
   }
 }
 </script>
-</body>
-</html>
+
+
+</body></html>
